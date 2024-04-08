@@ -13,35 +13,33 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import model.bean.Produto;
 import model.bean.Usuario;
 
-/**
- *
- * @author Senai
- */
-public class usuarioDAO {
-         public List<Usuario> read() {
-        List<Usuario> usuario = new ArrayList();
+
+public class ProdutoDAO {
+    public List<Produto> read() {
+        List<Produto> produto = new ArrayList();
 
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
-            stmt = conexao.prepareStatement("SELECT * FROM usuario");
+            stmt = conexao.prepareStatement("SELECT * FROM produto");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Usuario usuarios = new Usuario();                
-                usuarios.setIdUsuario(rs.getInt("idUsuario"));
-                usuarios.setNome(rs.getString("nome"));
-                usuarios.setSenha(rs.getString("senha"));
-                usuarios.setEmail(rs.getString("email"));
-                usuarios.setCpf(rs.getInt("cpf"));
-                usuarios.setTelefone(rs.getString("telefone"));
+                Produto produtos = new Produto();                
+                produtos.setIdProduto(rs.getInt("idProduto"));
+                produtos.setNome(rs.getString("nome"));
+                produtos.setCategoria(rs.getString("categoria"));
+                produtos.setDescricao(rs.getString("descricao"));
+                produtos.setPreco(rs.getFloat("preco"));
+                produtos.setEstoque(rs.getInt("estoque"));
                
                 
-                usuario.add(usuarios);
+                produto.add(produtos);
             }
 
             rs.close();
@@ -51,23 +49,23 @@ public class usuarioDAO {
             e.printStackTrace();
         }
 
-        return usuario;
+        return produto;
                 
     }
          
          
-          public void create(Usuario usuario) {
+          public void create(Produto produto) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO usuario (nome, senha, email, cpf, telefone) VALUES (?, ?, ?, ?, ?)");
-            stmt.setString(1, usuario.getNome());
-            stmt.setString(2, usuario.getSenha());
-            stmt.setString(3, usuario.getEmail());
-            stmt.setInt(4, usuario.getCpf());
-            stmt.setString(5, usuario.getTelefone());
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, descriao, preco, estoque) VALUES (?, ?, ?, ?, ?)");
+            stmt.setString(1, produto.getNome());
+            stmt.setString(2, produto.getCategoria());
+            stmt.setString(3, produto.getDescricao());
+            stmt.setFloat(4, (float) produto.getPreco());
+            stmt.setInt(5, produto.getEstoque());
            
             
             
@@ -84,34 +82,34 @@ public class usuarioDAO {
     
     
     
-    public void delete(Usuario usuario) {
+    public void delete(Produto produto) {
         try {
             java.sql.Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
            
-            stmt = conexao.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
-            stmt.setString(1, Integer.toString(usuario.getIdUsuario()));
+            stmt = conexao.prepareStatement("DELETE FROM produto WHERE idUsuario = ?");
+            stmt.setString(1, Integer.toString(produto.getIdProduto()));
 
             stmt.executeUpdate();
             stmt.close();
             conexao.close();
-            JOptionPane.showMessageDialog(null, "usuario removido com sucesso!");
+            JOptionPane.showMessageDialog(null, "produto removido com sucesso!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     
-    public Boolean login(String email, String senha){
+    public Boolean login(Float preco, int estoque){
         Boolean validar = false;
         try{
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT * FROM usuario WHERE nome = ?, senha = ?, email = ?, cpf = ? AND telefone = ?");           
-            stmt.setString(1, email);
-            stmt.setString(2, senha);
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE preco = ?, estoque = ?");           
+            stmt.setFloat(1, preco);
+            stmt.setInt(2, estoque);
                  
             rs = stmt.executeQuery();
             
@@ -131,16 +129,16 @@ public class usuarioDAO {
         
     }
     
-    public void editar(Usuario usuario){
+    public void editar(Produto produto){
         try {
           Connection conexao = Conexao.conectar();
           PreparedStatement stmt = null;
-          stmt = conexao.prepareStatement("UPDATE celular SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");
-           stmt.setString(1, usuario.getNome());
-           stmt.setString(2, usuario.getSenha());
-           stmt.setString(3, usuario.getEmail());
-           stmt.setInt(4, usuario.getCpf());
-           stmt.setString(5, usuario.getTelefone());
+          stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, descricao = ?, preco = ?, estoque = ? WHERE idUsuario = ?");
+           stmt.setString(1, produto.getNome());
+           stmt.setString(2, produto.getCategoria());
+           stmt.setString(3, produto.getDescricao());
+           stmt.setFloat(4, (float) produto.getPreco());
+           stmt.setInt(5, produto.getEstoque());
                 
           stmt.executeUpdate();
          
@@ -151,7 +149,7 @@ public class usuarioDAO {
        } catch (SQLException e){
            
                e.printStackTrace();
-       JOptionPane.showMessageDialog(null,"CelularesDAO editar:" + e);
+       JOptionPane.showMessageDialog(null,"ProdutosDAO editar:" + e);
        
     }
         

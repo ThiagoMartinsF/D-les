@@ -1,36 +1,25 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+    <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
     <html>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="login.css" rel="stylesheet" type="text/css" />
-        <title>Loja D`Eles</title>
+        <link href="cadastro.css" rel="stylesheet" type="text/css" />
+        <title>Cadastro</title>
     </head>
 
     <body>
-        
+
 
         <main>
-            <h1 class="titulo">Login</h1>
+            <h1 class="titulo">Listar Produtos</h1>
             <br> <br>
             <div class="container">
 
-                
-                    <input type="text" placeholder="Numero">
-                    <br> <br> <br>
-
-                    <input type="text" placeholder="Usuario">
-                    <br> <br> <br>
-
-                    <input type="text" placeholder="CPF">
-                    <br> <br> <br>
-
-                    <input type="text" placeholder="Senha">
 
 
-                
+
             </div>
         </main>
 
