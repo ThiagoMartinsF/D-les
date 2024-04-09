@@ -1,0 +1,31 @@
+body{
+    background-color: gray;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 13em;
+}
+
+
+main{
+    width: 100%;
+}
+
+
+
+h1{
+    text-align: center;
+    color: brown;
+}
+
+.containerProdutos{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    border-color: brown;
+    flex-direction: row;
+
+}
