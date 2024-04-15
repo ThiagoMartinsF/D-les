@@ -17,9 +17,15 @@
     </head>
 
     <body>
-
+        <header>
+            <div class="nomeLogo">
+                <h1 id="titulo">Fre</h1> <h1 id="titulo">e</h1> <h1 id="titulo">les</h1>
+            </div>
+        </header>
 
         <main>
+
+            <a href="./Login"><button>Voltar</button></a>
             <h1 class="titulo">Cadastro</h1>
             <br> <br>
             <div class="container">

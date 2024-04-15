@@ -12,9 +12,73 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroController</servlet-name>
+        <servlet-class>controller.CadastroController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoriasController</servlet-name>
+        <servlet-class>controller.CategoriasController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProdutoController</servlet-name>
+        <servlet-class>controller.ProdutoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>controller.HomeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EntradaController</servlet-name>
+        <servlet-class>controller.EntradaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SobremesaController</servlet-name>
+        <servlet-class>controller.SobremesaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BebidaController</servlet-name>
+        <servlet-class>controller.BebidaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroController</servlet-name>
+        <url-pattern>/Cadastrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoriasController</servlet-name>
+        <url-pattern>/Categorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdutoController</servlet-name>
+        <url-pattern>/Produto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EntradaController</servlet-name>
+        <url-pattern>/Entrada</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SobremesaController</servlet-name>
+        <url-pattern>/Sobremesa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BebidaController</servlet-name>
+        <url-pattern>/Bebida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
