@@ -19,7 +19,7 @@ import model.bean.Usuario;
  *
  * @author Senai
  */
-public class usuarioDAO {
+public class UsuarioDAO {
          public List<Usuario> read() {
         List<Usuario> usuario = new ArrayList();
 
