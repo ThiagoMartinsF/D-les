@@ -1,4 +1,35 @@
 body{
     margin: 0;
     padding: 0;
+
+    background-color: gray;
+}
+
+.titulo{
+    color: brown;
+}
+
+.titulo1{
+    color: rgb(0, 3, 170);
+}
+.titulo2{
+    color: rgb(240, 248, 255);
+}
+.titulo3{
+    color: rgb(184, 7, 1);
+}
+
+
+.containerProdutos {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    border-color: rgb(209, 35, 35);
+    flex-direction: row;
+
+}
+
+h1 {
+    text-align: center; 
 }
