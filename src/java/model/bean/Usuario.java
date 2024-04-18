@@ -14,18 +14,18 @@ public class Usuario {
     private String nome;
     private String senha;
     private String email;
-    private int cpf; 
+    private String cpf; 
     private String telefone;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nome, String senha, int cpf, String email, String telefone) {
+    public Usuario(int idUsuario, String nome, String senha, String email, String cpf, String telefone) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.senha = senha;
-        this.cpf = cpf;
         this.email = email;
+        this.cpf = cpf;
         this.telefone = telefone;
     }
 
@@ -53,20 +53,20 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getTelefone() {
@@ -78,6 +78,4 @@ public class Usuario {
     }
 
    
-    
-    
 }

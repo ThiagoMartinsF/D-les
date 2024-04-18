@@ -30,39 +30,41 @@
 
                 <br> <br>
                 <div class="container">
-
-
-                    <div>
-                        <i class="fa-solid fa-user"></i> <input name ="nome" type="text" placeholder="Nome">
-                        <br> <br>
+                    <form action="Cadastrar">
+                        <div>
+                            <i class="fa-solid fa-user"></i> <input name ="nome" type="text" placeholder="Nome">
+                            <br> <br>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-envelope"></i> <input name ="email" type="text" placeholder="Email">
+                            <br> <br>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-lock"></i> <input name ="senha" type="text" placeholder="Senha">
+                            <br> <br>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-check"></i> <input name ="cpf" type="text" placeholder="CPF">
+                            <br> <br>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-phone"></i> <input name ="telefone" type="text" placeholder="Telefone">
+                            <br> <br>
+                        </div>
+    
+                        <button type="submit" class="btn1">Confirmar</button>
+    
+    
                     </div>
-
-                    <div>
-                        <i class="fa-solid fa-envelope"></i> <input name ="email" type="text" placeholder="Email">
-                        <br> <br>
+                    <br>
+                    <div class = "botoesFinalizar1">
+                        <a href="./Login"><button class ="vai">Voltar</button></a>
                     </div>
-                    <div>
-                        <i class="fa-solid fa-lock"></i> <input name ="senha" type="text" placeholder="Senha">
-                        <br> <br>
-                    </div>
+                    </form>
 
-                    <div>
-                        <i class="fa-solid fa-check"></i> <input name ="cpf" type="text" placeholder="CPF">
-                        <br> <br>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-phone"></i> <input name ="telefone" type="text" placeholder="Telefone">
-                        <br> <br>
-                    </div>
-
-                    <button class="btn1">Confirmar</button>
-
-
-                </div>
-                <br>
-                <div class = "botoesFinalizar1">
-                    <a href="./Login"><button class ="vai">Voltar</button></a>
-                </div>
+                    
             </main>
 
         </body>

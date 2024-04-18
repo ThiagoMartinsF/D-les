@@ -37,7 +37,7 @@ public class UsuarioDAO {
                 usuarios.setNome(rs.getString("nome"));
                 usuarios.setSenha(rs.getString("senha"));
                 usuarios.setEmail(rs.getString("email"));
-                usuarios.setCpf(rs.getInt("cpf"));
+                usuarios.setCpf(rs.getString("cpf"));
                 usuarios.setTelefone(rs.getString("telefone"));
                
                 
@@ -66,7 +66,7 @@ public class UsuarioDAO {
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getSenha());
             stmt.setString(3, usuario.getEmail());
-            stmt.setInt(4, usuario.getCpf());
+            stmt.setString(4, usuario.getCpf());
             stmt.setString(5, usuario.getTelefone());
            
             
@@ -140,7 +140,7 @@ public class UsuarioDAO {
            stmt.setString(1, usuario.getNome());
            stmt.setString(2, usuario.getSenha());
            stmt.setString(3, usuario.getEmail());
-           stmt.setInt(4, usuario.getCpf());
+           stmt.setString(4, usuario.getCpf());
            stmt.setString(5, usuario.getTelefone());
                 
           stmt.executeUpdate();
