@@ -33,25 +33,25 @@
 
 
                     <div>
-                        <i class="fa-solid fa-user"></i> <input type="text" placeholder="Nome">
+                        <i class="fa-solid fa-user"></i> <input name ="nome" type="text" placeholder="Nome">
                         <br> <br>
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-envelope"></i> <input type="text" placeholder="Email">
+                        <i class="fa-solid fa-envelope"></i> <input name ="email" type="text" placeholder="Email">
                         <br> <br>
                     </div>
                     <div>
-                        <i class="fa-solid fa-lock"></i> <input type="text" placeholder="Senha">
+                        <i class="fa-solid fa-lock"></i> <input name ="senha" type="text" placeholder="Senha">
                         <br> <br>
                     </div>
 
                     <div>
-                        <i class="fa-solid fa-check"></i> <input type="text" placeholder="CPF">
+                        <i class="fa-solid fa-check"></i> <input name ="cpf" type="text" placeholder="CPF">
                         <br> <br>
                     </div>
                     <div>
-                        <i class="fa-solid fa-phone"></i> <input type="text" placeholder="Telefone">
+                        <i class="fa-solid fa-phone"></i> <input name ="telefone" type="text" placeholder="Telefone">
                         <br> <br>
                     </div>
 

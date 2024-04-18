@@ -46,15 +46,6 @@ h1 {
 
 }
 
-.containerProdutos {
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    border-color: rgb(209, 38, 38);
-    flex-direction: row;
-
-}
 
 footer {
     background-color: rgb(70, 70, 70);
@@ -142,4 +133,10 @@ footer {
 }
 .vermelho{
     color: rgb(238, 5, 5);
+}
+
+.botoesFinai2{
+    position: relative;
+    margin-top: 10%;
+    left: 80%;
 }

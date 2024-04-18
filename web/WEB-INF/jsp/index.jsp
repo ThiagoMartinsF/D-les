@@ -49,6 +49,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
+
                             <div class="containerProdutos">
 
                                 <div class="card" style="width: 18rem;">
@@ -189,14 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="prev1" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="next1" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
+               
             </div>
 
 
@@ -260,6 +254,10 @@
 
 
             <br>
+            <br>
+            <div lass="botoesFinais2">
+                <button href="./index.jsp">Voltar</button>
+            </div>
 
         </main>
 
