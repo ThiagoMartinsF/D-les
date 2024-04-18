@@ -100,7 +100,7 @@ public class ProdutoDAO {
         }
     }
     
-    public Boolean login(Float preco, int estoque){
+    public Boolean validaProduto(Float preco, int estoque){
         Boolean validar = false;
         try{
             Connection conexao = Conexao.conectar();

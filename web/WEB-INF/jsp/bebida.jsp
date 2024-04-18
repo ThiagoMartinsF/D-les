@@ -18,6 +18,23 @@
 
                 <br>
                 <h1 class="titulo">Bebidas</h1>
+                <div class="categorias">
+                    <div>
+                        <a href="./Entrada">
+                            <p class="azul">Entradas</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Bebida">
+                            <p class="branco">bebidas</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./Sobremesa">
+                            <p class="vermelho">sobremesa</p>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="logo">
                     <h1 class="titulo1">Fre</h1>
@@ -126,7 +143,11 @@
                     <button>Confirmar</button>
                 </div>
                 <div class="botoesFinais1">
-                    <a href="./Login"><button>LogOut</button></a>
+                    <button href="./Login">LogOut</button>g
+                </div>
+
+                <div lass="botoesFinais2">
+                    <button href="./index.jsp">Voltar</button>
                 </div>
 
             </main>

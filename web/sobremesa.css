@@ -59,3 +59,20 @@ h1 {
 button{
     border-radius: 20px;
 }
+
+.categorias{
+    justify-content: space-around;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.azul{
+    color: blue;
+}
+.branco{
+    color: rgb(255, 255, 255);
+}
+.vermelho{
+    color: rgb(238, 5, 5);
+}

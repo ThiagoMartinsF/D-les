@@ -51,28 +51,29 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/Login")) {
-            String nextPage = "WEB-INF/jsp/login.jsp";
-            Usuario usuario = new Usuario();
-            UsuarioDAO validar = new UsuarioDAO();
+        if (url.equals("/logar")) {
+            String nextPage = "/WEB-INF/jsp/index.jsp";
+            Usuario user = new Usuario();
+            UsuarioDAO valida = new UsuarioDAO();
 
-            usuario.setEmail(request.getParameter("email"));
-            usuario.setSenha(request.getParameter("senha"));
+            user.setEmail(request.getParameter("email"));
+            user.setSenha(request.getParameter("senha"));
 
             try {
-                validar.login(usuario);
+                Usuario userAutenticado = valida.validaUser(user);
 
-                if (validar.login(usuario) == true) {
-                    nextPage = "/WEB-INF/jsp/login.jsp";
-                    request.setAttribute("errorMessage", "Usuário ou senha incorretos");
+                if (userAutenticado != null && !userAutenticado.getNome().isEmpty()) {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                     dispatcher.forward(request, response);
                 } else {
+                    nextPage = "/WEB-INF/jsp/login.jsp";
+                    request.setAttribute("errorMessage", "Usuário ou senha inválidos");
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                     dispatcher.forward(request, response);
                 }
             } catch (Exception e) {
-                nextPage = "/WEB-INF/jsp/login.html";
+                nextPage = "/WEB-INF/jsp/login.jsp";
+                request.setAttribute("errorMessage", "Usuário ou senha inválidos");
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);
             }

@@ -102,33 +102,34 @@ public class UsuarioDAO {
         }
     }
     
-    public Boolean login(String email, String senha){
-        Boolean validar = false;
-        try{
-            Connection conexao = Conexao.conectar();
+     public Usuario validaUser(Usuario user) {
+        Usuario usuarioValido = new Usuario();
+        try {
+            Connection con = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT * FROM usuario WHERE nome = ?, senha = ?, email = ?, cpf = ? AND telefone = ?");           
-            stmt.setString(1, email);
-            stmt.setString(2, senha);
-                 
+            stmt = con.prepareStatement("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+            stmt.setString(1, user.getEmail());
+            stmt.setString(2, user.getSenha());
             rs = stmt.executeQuery();
             
             if(rs.next()) {
-                validar = true;
+                usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
+                usuarioValido.setNome(rs.getString("nome"));
+                usuarioValido.setSenha(rs.getString("senha"));
             }
             
             rs.close();
             stmt.close();
-            conexao.close();
-            
-        }catch(SQLException e){
-        e.printStackTrace();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            usuarioValido.setIdUsuario(0);
+            usuarioValido.setNome("");
+            usuarioValido.setSenha("");
         }
-        
-         return null;
-        
+        return usuarioValido;
     }
     
     public void editar(Usuario usuario){
