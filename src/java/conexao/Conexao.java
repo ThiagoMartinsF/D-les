@@ -1,26 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Senai
- */
 public class Conexao {
-    private static final String url = "jdbc:mysql://localhost:3306/deles";
-    private static final String usuario = "root";
-    private static final String senha = "";
-    
-    
-    public static Connection conectar() throws SQLException {
-        return (Connection) DriverManager.getConnection(url, usuario, senha);
+        private static final  String URL = "jdbc:mysql://localhost:3306/eles";
+        private static final  String USUARIO = "root";
+        private static final  String SENHA = "";
+        private static final  String driver = "com.mysql.cj.jdbc.Driver";
+       
+public static java.sql.Connection conectar() {
+        java.sql.Connection conn = null;
+        try {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(URL, USUARIO, SENHA);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"ERRO! Conexao:" + e);
+        }
+        return conn;
     }
-    
 }

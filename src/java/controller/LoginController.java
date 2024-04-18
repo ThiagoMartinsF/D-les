@@ -50,7 +50,7 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/logar")) {
+        if (url.equals("/senha")) {
             String nextPage = "/WEB-INF/jsp/index.jsp";
             Usuario user = new Usuario();
             UsuarioDAO valida = new UsuarioDAO();

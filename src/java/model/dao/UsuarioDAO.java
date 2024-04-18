@@ -109,14 +109,14 @@ public class UsuarioDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = con.prepareStatement("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
+            stmt = con.prepareStatement("SELECT * FROM usuario WHERE email = ? AND senha = ?");
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getSenha());
             rs = stmt.executeQuery();
             
             if(rs.next()) {
                 usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
-                usuarioValido.setNome(rs.getString("nome"));
+                usuarioValido.setEmail(rs.getString("email"));
                 usuarioValido.setSenha(rs.getString("senha"));
             }
             
@@ -126,7 +126,7 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             usuarioValido.setIdUsuario(0);
-            usuarioValido.setNome("");
+            usuarioValido.setEmail("");
             usuarioValido.setSenha("");
         }
         return usuarioValido;
@@ -136,7 +136,7 @@ public class UsuarioDAO {
         try {
           Connection conexao = Conexao.conectar();
           PreparedStatement stmt = null;
-          stmt = conexao.prepareStatement("UPDATE celular SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");
+          stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");
            stmt.setString(1, usuario.getNome());
            stmt.setString(2, usuario.getSenha());
            stmt.setString(3, usuario.getEmail());
@@ -152,7 +152,7 @@ public class UsuarioDAO {
        } catch (SQLException e){
            
                e.printStackTrace();
-       JOptionPane.showMessageDialog(null,"CelularesDAO editar:" + e);
+       JOptionPane.showMessageDialog(null,"UsuarioDAO editar:" + e);
        
     }
         
