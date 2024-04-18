@@ -23,14 +23,14 @@
 
             <main>
 
-                <div class="container">
+                <form action="senha" class ="container">
 
                     <div>
-                        <i class="fa-solid fa-envelope"></i> <input type="text" placeholder="Email">
+                        <i class="fa-solid fa-envelope"></i> <input name ="email" type="text" placeholder="Email">
                         <br> <br>
                     </div>
                     <div>
-                        <i class="fa-solid fa-lock"></i> <input type="text" placeholder="Senha">
+                        <i class="fa-solid fa-lock"></i> <input name = "senha" type="password" placeholder="Senha">
                         <br> <br>
                     </div>
 
@@ -38,10 +38,10 @@
                     <button class="btn1">Confirmar</button>
 
 
-                </div>
+                </form>
                 <div class="link">
                     <p>Ainda não tem um login? cadastre-se clicando <a href="./Cadastrar">aqui</a></p>
-                </div>
+                </form>
 
             </main>
             

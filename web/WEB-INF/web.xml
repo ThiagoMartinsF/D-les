@@ -57,6 +57,10 @@
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/logar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CategoriasController</servlet-name>
         <url-pattern>/Categorias</url-pattern>
     </servlet-mapping>
