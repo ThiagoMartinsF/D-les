@@ -65,8 +65,8 @@ public class CadastroController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        System.out.println("txt");
-        if (url.equals("/Cadastrar")) {
+
+        if (url.equals("/cadastro")) {
             String nextPage = "/WEB-INF/jsp/login.jsp";
             Usuario user = new Usuario();
             UsuarioDAO userDAO = new UsuarioDAO();
@@ -76,10 +76,16 @@ public class CadastroController extends HttpServlet {
             user.setEmail(request.getParameter("email"));
             user.setCpf(request.getParameter("cpf"));
             user.setTelefone(request.getParameter("telefone"));
-            
+
             try {
+       
+                if (user.getNome().trim().equals("") && (user.getEmail().trim().equals("")) &&(user.getSenha().trim().equals(""))) {
+                    nextPage = "/WEB-INF/jsp/cadastro.jsp";
+                    request.setAttribute("errorMessage", "erro!");
+                } else{
+                    userDAO.create(user);
+                }
                 
-                userDAO.create(user);
 
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);

@@ -10,7 +10,7 @@
                 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
                 crossorigin="anonymous">
             <link href="entrada.css" rel="stylesheet" type="text/css" />
-            <title>EntraAdas</title>
+            <title>Entradas</title>
         </head>
 
         <body>
@@ -52,9 +52,9 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
+                                <h5 class="card-title">Soupe à l'Oignon</h5>
+                                <p class="card-text"> Uma sopa de cebola caramelizada, coberta com fatias de pão e
+                                    queijo derretido.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -62,29 +62,27 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
+                                <h5 class="card-title">Terrine de Legumes</h5>
+                                <p class="card-text"> Uma terrina feita com uma variedade de legumes, geralmente servida
+                                    fatiada com pão.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
+                                <h5 class="card-title">Rillettes</h5>
+                                <p class="card-text">Uma pasta feita com carne de porco cozida lentamente e desfiada,
+                                    geralmente servida em torradas.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
+                                <h5 class="card-title">Tartare de Salmão</h5>
+                                <p class="card-text">Salmão cru picado e temperado com condimentos como cebola,
+                                    alcaparras e endro, uma entrada fresca e saborosa.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -97,9 +95,9 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
+                                <h5 class="card-title">Moules Marinières</h5>
+                                <p class="card-text">Mexilhões cozidos em vinho branco, alho, cebola e ervas, uma
+                                    entrada popular em regiões costeiras.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -107,29 +105,27 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
+                                <h5 class="card-title">Salade de Lentilles</h5>
+                                <p class="card-text"> Uma salada refrescante feita com lentilhas cozidas, cebola,
+                                    vinagrete e ervas frescas, às vezes acompanhada de bacon ou linguiça.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
+                                <h5 class="card-title">Carpaccio de Carne</h5>
+                                <p class="card-text"> Finas fatias de carne crua, geralmente de carne bovina ou vitela,
+                                    marinadas em azeite, limão, alcaparras e queijo parmesão.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
+                                <h5 class="card-title">Crevettes à la Provençale</h5>
+                                <p class="card-text"> Camarões salteados em azeite de oliva, alho, tomates, ervas e
+                                    vinho branco, servidos como uma entrada aromática e saborosa.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -146,7 +142,7 @@
                 </div>
 
                 <div class="botoesFinais2">
-                    <a href="./index.jsp"><button>Voltar</button></a>
+                    <a href="./index.htm"><button>Voltar</button></a>
                 </div>
             </main>
 

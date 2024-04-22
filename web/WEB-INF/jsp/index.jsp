@@ -19,13 +19,19 @@
 
             <div class="categorias">
                 <div>
-                    <a href="./Entrada"><p class = "azul">Entradas</p></a>
+                    <a href="./Entrada">
+                        <p class="azul">Entradas</p>
+                    </a>
                 </div>
                 <div>
-                    <a href="./Bebida"><p class = "branco">bebidas</p></a>
+                    <a href="./Bebida">
+                        <p class="branco">bebidas</p>
+                    </a>
                 </div>
                 <div>
-                    <a href="./Sobremesa"><p class = "vermelho">sobremesa</p></a>
+                    <a href="./Sobremesa">
+                        <p class="vermelho">sobremesa</p>
+                    </a>
                 </div>
             </div>
 
@@ -58,7 +64,7 @@
                                         <h5 class="card-title">Coq au Vin</h5>
                                         <p class="card-text">Frango cozido em vinho tinto, geralmente servido
                                             com cogumelos, cebolas e bacon.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
@@ -68,7 +74,7 @@
                                         <h5 class="card-title">Boeuf Bourguignon</h5>
                                         <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
                                             tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
@@ -78,7 +84,7 @@
                                         <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
                                             pimentão, tomate e
                                             cebola, geralmente refogados em azeite de oliva.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
@@ -88,7 +94,7 @@
                                         <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
                                             de peixes,
                                             frutos do mar, tomate, açafrão e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
@@ -100,40 +106,38 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Coq au Vin 2</h5>
-                                        <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                            com cogumelos, cebolas e bacon.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Confit de Canard</h5>
+                                        <p class="card-text">Pernas de pato cozidas lentamente em sua própria gordura,
+                                            resultando em carne tenra e saborosa.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Boeuf Bourguignon 2</h5>
-                                        <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                            tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Quenelles de Brochet</h5>
+                                        <p class="card-text"> Bolinhos de peixe de água doce (normalmente de pike)
+                                            misturados com ovos, farinha e temperos, cozidos em um molho cremoso.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Ratatouille 2</h5>
-                                        <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                            pimentão, tomate e
-                                            cebola, geralmente refogados em azeite de oliva.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Tartiflette</h5>
+                                        <p class="card-text"> Um prato gratinado feito com batatas, bacon, cebolas e
+                                            queijo Reblochon.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Bouillabaisse 2</h5>
-                                        <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                            de peixes,
-                                            frutos do mar, tomate, açafrão e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Salade Lyonnaise</h5>
+                                        <p class="card-text">Uma salada composta de alface, bacon, croutons, e um ovo
+                                            pochê, geralmente servida com um molho de vinagrete.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
@@ -147,40 +151,38 @@
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Coq au Vin 3</h5>
-                                        <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                            com cogumelos, cebolas e bacon.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Boudin Blanc</h5>
+                                        <p class="card-text"> Uma salsicha branca feita com carne de porco, leite e
+                                            especiarias.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Boeuf Bourguignon 3</h5>
-                                        <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                            tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Gratin Dauphinois</h5>
+                                        <p class="card-text"> Fatias finas de batata cozidas em creme de leite, alho e
+                                            noz-moscada, gratinadas no forno.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Ratatouille 3</h5>
-                                        <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                            pimentão, tomate e
-                                            cebola, geralmente refogados em azeite de oliva.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Pissaladière</h5>
+                                        <p class="card-text"> Uma espécie de pizza provençal, coberta com cebolas
+                                            caramelizadas, azeitonas pretas e anchovas.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
                                 <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Bouillabaisse 3</h5>
-                                        <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                            de peixes,
-                                            frutos do mar, tomate, açafrão e ervas.</p>
-                                        <a href="#" class="btn btn-primary">Visitar</a>
+                                        <h5 class="card-title">Croque-Monsieur</h5>
+                                        <p class="card-text">Um sanduíche de presunto e queijo grelhado, coberto com
+                                            molho bechamel e queijo derretido.</p>
+                                        <a href="#" class="btn btn-primary">Adicionar</a>
                                     </div>
                                 </div>
 
@@ -190,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
 
 
@@ -213,7 +215,7 @@
                             <h5 class="card-title">Coq au Vin</h5>
                             <p class="card-text">Frango cozido em vinho tinto, geralmente servido
                                 com cogumelos, cebolas e bacon.</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="#" class="btn btn-primary">Adicionar</a>
                         </div>
                     </div>
 
@@ -223,7 +225,7 @@
                             <h5 class="card-title">Boeuf Bourguignon</h5>
                             <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
                                 tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="#" class="btn btn-primary">Adicionar</a>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -233,7 +235,7 @@
                             <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
                                 pimentão, tomate e
                                 cebola, geralmente refogados em azeite de oliva.</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="#" class="btn btn-primary">Adicionar</a>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -243,7 +245,7 @@
                             <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
                                 de peixes,
                                 frutos do mar, tomate, açafrão e ervas.</p>
-                            <a href="#" class="btn btn-primary">Visitar</a>
+                            <a href="#" class="btn btn-primary">Adicionar</a>
                         </div>
                     </div>
 
@@ -256,7 +258,7 @@
             <br>
             <br>
             <div lass="botoesFinais2">
-                <button href="./index.jsp">Voltar</button>
+                <a href="./Login"><button>LogOUT</button></a>
             </div>
 
         </main>

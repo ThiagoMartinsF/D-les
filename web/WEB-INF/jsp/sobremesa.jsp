@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="botoesFinais2">
-                    <a href="./index.jsp"><button>Voltar</button></a>
+                    <a href="./index.htm"><button>Voltar</button></a>
                 </div>
             </main>
 

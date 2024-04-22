@@ -53,9 +53,8 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
+                                <h5 class="card-title">Vinho tinto</h5>
+                                <p class="card-text">A França é famosa por seus vinhos, incluindo os tintos, que vêm de regiões como Bordeaux, Borgonha e Rhône.</p>
                                 <a href="#" class="btn btn-primary">Visitar</a>
                             </div>
                         </div>
@@ -63,29 +62,24 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
+                                <h5 class="card-title">Vinho branco</h5>
+                                <p class="card-text"> Assim como os tintos, os vinhos brancos franceses são renomados, com variedades como Chardonnay e Sauvignon Blanc.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
+                                <h5 class="card-title">Champanhe</h5>
+                                <p class="card-text">Originário da região de Champagne, este vinho espumante é um símbolo de celebração em todo o mundo.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
+                                <h5 class="card-title">Pastis</h5>
+                                <p class="card-text">Uma bebida anisada típica da Provença, que se tornou popular em toda a França.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -98,9 +92,8 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
+                                <h5 class="card-title">Calvados</h5>
+                                <p class="card-text"> Uma bebida alcoólica feita de maçãs, semelhante ao conhaque, originária da região da Normandia.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -108,29 +101,24 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
+                                <h5 class="card-title">Kir</h5>
+                                <p class="card-text"> Uma mistura de vinho branco (geralmente Bourgogne Aligoté) com licor de groselha, é uma bebida popular antes das refeições na França.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
+                                <h5 class="card-title">Kir Royale</h5>
+                                <p class="card-text">Similar ao Kir, mas feito com champanhe em vez de vinho branco, adicionando um toque de luxo à bebida.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
                             <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
+                                <h5 class="card-title">Armagnac</h5>
+                                <p class="card-text">Outra variedade de conhaque, originária da região de Armagnac, conhecida por seu sabor rico e robusto.</p>
                                 <a href="#" class="btn btn-primary">Adicioar</a>
                             </div>
                         </div>
@@ -143,11 +131,11 @@
                     <button>Confirmar</button>
                 </div>
                 <div class="botoesFinais1">
-                    <button href="./Login">LogOut</button>g
+                    <button href="./Login">LogOut</button>
                 </div>
 
                 <div lass="botoesFinais2">
-                    <button href="./index.jsp">Voltar</button>
+                    <a href="./index.htm"><button>Voltar</button></a>
                 </div>
 
             </main>

@@ -61,7 +61,7 @@ public class LoginController extends HttpServlet {
             try {
                 Usuario userAutenticado = valida.validaUser(user);
 
-                if (userAutenticado != null && !userAutenticado.getEmail().isEmpty()) {
+                if (userAutenticado != null && !userAutenticado.getEmail().trim().isEmpty()) {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                     dispatcher.forward(request, response);
                 } else {
