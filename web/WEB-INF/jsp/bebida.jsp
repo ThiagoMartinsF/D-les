@@ -131,7 +131,7 @@
                     <button>Confirmar</button>
                 </div>
                 <div class="botoesFinais1">
-                    <button href="./Login">LogOut</button>
+                    <a href="./Login"><button>LogOut</button></a>
                 </div>
 
                 <div lass="botoesFinais2">

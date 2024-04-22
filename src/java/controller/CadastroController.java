@@ -78,15 +78,13 @@ public class CadastroController extends HttpServlet {
             user.setTelefone(request.getParameter("telefone"));
 
             try {
-       
-                if (user.getNome().trim().equals("") && (user.getEmail().trim().equals("")) &&(user.getSenha().trim().equals(""))) {
+
+                if (user.getNome().trim().isEmpty() || user.getEmail().trim().isEmpty() || user.getSenha().trim().isEmpty()) {
                     nextPage = "/WEB-INF/jsp/cadastro.jsp";
-                    request.setAttribute("errorMessage", "erro!");
-                } else{
+                    request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos.");
+                } else {
                     userDAO.create(user);
                 }
-                
-
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);
 

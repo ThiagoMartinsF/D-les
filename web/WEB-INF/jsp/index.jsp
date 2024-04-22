@@ -3,6 +3,7 @@
     <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
     <html>
 
     <head>
@@ -20,17 +21,17 @@
             <div class="categorias">
                 <div>
                     <a href="./Entrada">
-                        <p class="azul">Entradas</p>
+                        <i class="fa-solid fa-burger"></i>  <p class="azul">Entradas</p>
                     </a>
                 </div>
                 <div>
                     <a href="./Bebida">
-                        <p class="branco">bebidas</p>
+                        <i class="fa-solid fa-martini-glass-citrus"></i>  <p class="branco">bebidas</p>
                     </a>
                 </div>
                 <div>
                     <a href="./Sobremesa">
-                        <p class="vermelho">sobremesa</p>
+                        <i class="fa-solid fa-stroopwafel"></i>  <p class="vermelho">sobremesa</p>
                     </a>
                 </div>
             </div>
