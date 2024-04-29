@@ -16,7 +16,7 @@
         <header>
 
             <br>
-            <h1 class="titulo">Produtos</h1>
+            <h1 class="titulo">Refeições</h1>
 
             <div class="categorias">
                 <div>

@@ -30,9 +30,9 @@
 
                 <br> <br>
                 <div class="container">
-                    <form action="cadastro" method="post>
+                    <form action="cadastro" method="post">
                         <div>
-                            <i class="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
+                            <i class ="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
                             <br> <br>
                         </div>
 
@@ -46,12 +46,11 @@
                         </div>
 
                         <div>
-                            <i class="fa-solid fa-check"></i> <input name="cpf" type="number" placeholder="CPF">
+                            <i class="fa-solid fa-check"></i> <input id="cpf" type="text" name="cpf" onkeypress="return numeros(event)"  placeholder="CPF"  minlength="14" maxlength="14" required>
                             <br> <br>
                         </div>
                         <div>
-                            <i class="fa-solid fa-phone"></i> <input name="telefone" type="number"
-                                placeholder="Telefone">
+                            <i class="fa-solid fa-phone"></i> <input id="telefone" type="text" name="telefone" onkeypress="return numeros(event)" placeholder="Telefone" minlength="14" maxlength="14" required>
                             <br> <br>
                         </div>
                         <div class="botoesFinalizar1">
@@ -76,5 +75,5 @@
             </main>
 
         </body>
-
+        <script src="main.js" type="text/javascript"></script>
         </html>
