@@ -39,6 +39,7 @@ public class UsuarioDAO {
                 usuarios.setEmail(rs.getString("email"));
                 usuarios.setCpf(rs.getString("cpf"));
                 usuarios.setTelefone(rs.getString("telefone"));
+                usuarios.setDataNascimento(rs.getDate("dataNascimento"));
                 
                
                 
@@ -63,12 +64,13 @@ public class UsuarioDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO usuario (nome, senha, email, cpf, telefone ) VALUES (?, ?, ?, ?, ? )");
+            stmt = conexao.prepareStatement("INSERT INTO usuario (nome, senha, email, cpf, telefone, dataNascimento ) VALUES (?, ?, ?, ?, ?, ? )");
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getSenha());
             stmt.setString(3, usuario.getEmail());
             stmt.setString(4, usuario.getCpf());
             stmt.setString(5, usuario.getTelefone());
+            stmt.setDate(6, usuario.getDataNascimento());
 
            
             
@@ -138,12 +140,13 @@ public class UsuarioDAO {
         try {
           Connection conexao = Conexao.conectar();
           PreparedStatement stmt = null;
-          stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ? WHERE idUsuario = ?");
+          stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, senha = ?, email = ?, cpf = ?, telefone = ?, dataNascimento = ? WHERE idUsuario = ?");
            stmt.setString(1, usuario.getNome());
            stmt.setString(2, usuario.getSenha());
            stmt.setString(3, usuario.getEmail());
            stmt.setString(4, usuario.getCpf());
            stmt.setString(5, usuario.getTelefone());
+           stmt.setDate(6, usuario.getDataNascimento());
            
                 
           stmt.executeUpdate();

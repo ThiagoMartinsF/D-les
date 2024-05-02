@@ -30,7 +30,7 @@
 
                 <br> <br>
                 <div class="container">
-                    <form action="cadastro" method="post">
+                    <form action="cadastro" method="POST">
                         <div>
                             <i class="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
                             <br> <br>

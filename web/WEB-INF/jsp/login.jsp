@@ -23,7 +23,7 @@
 
             <main>
 
-                <form action="senha" class ="container" method="post">
+                <form action="senha" class ="container" method="POST">
 
                     <div>
                         <i class="fa-solid fa-envelope"></i> <input name ="email" type="text" placeholder="Email">

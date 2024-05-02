@@ -12,21 +12,23 @@ package model.bean;
 public class Produto {
     private int idProduto;
     private String nome;
+    private Float preco;
     private String categoria;
-    private String descricao;
-    private double preco;
-    private int estoque;
+    private double descricao;
+    private int qtd;
+    private Byte[] img;
 
     public Produto() {
     }
 
-    public Produto(int idProduto, String nome, String categoria, String descricao, double preco, int estoque) {
+    public Produto(int idProduto, String nome, Float preco, String categoria, double descricao, int qtd, Byte[] img) {
         this.idProduto = idProduto;
         this.nome = nome;
+        this.preco = preco;
         this.categoria = categoria;
         this.descricao = descricao;
-        this.preco = preco;
-        this.estoque = estoque;
+        this.qtd = qtd;
+        this.img = img;
     }
 
     public int getIdProduto() {
@@ -45,6 +47,14 @@ public class Produto {
         this.nome = nome;
     }
 
+    public Float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Float preco) {
+        this.preco = preco;
+    }
+
     public String getCategoria() {
         return categoria;
     }
@@ -53,29 +63,32 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public String getDescricao() {
+    public double getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(double descricao) {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
-        return preco;
+    public int getQtd() {
+        return qtd;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
     }
 
-    public int getEstoque() {
-        return estoque;
+    public Byte[] getImg() {
+        return img;
     }
 
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
+    public void setImg(Byte[] img) {
+        this.img = img;
     }
+
+   
+   
 
     
    
