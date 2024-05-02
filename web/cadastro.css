@@ -47,15 +47,16 @@ main{
 }
 
 h1 {
-    text-align: center; 
+    text-align: center;
+    font-size: 30px; 
 }
 
 input{
-border-radius: 10px;
+    width: 15em;
 }
 
 .container{ 
-    height: 240px;
+    height: 300px;
     border-radius: 50px;
     background-color: rgb(206, 206, 206);
     margin: 0;
@@ -71,6 +72,7 @@ border-radius: 10px;
     border-color: brown;
     box-shadow: 200px;
 }
+
 
 .btn1{  
     border-radius: 20px;

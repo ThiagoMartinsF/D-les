@@ -20,9 +20,9 @@
 
 
                 <div class="logo">
-                    <h1 class="titulo1">Fre</h1>
-                    <h1 class="titulo2">e</h1>
-                    <h1 class="titulo3">les</h1>
+                    <h1 class="titulo1">Bon</h1>
+                    <h1 class="titulo2">appe</h1>
+                    <h1 class="titulo3">tit</h1>
                 </div>
             </header>
 
@@ -32,7 +32,7 @@
                 <div class="container">
                     <form action="cadastro" method="post">
                         <div>
-                            <i class ="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
+                            <i class="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
                             <br> <br>
                         </div>
 
@@ -41,16 +41,25 @@
                             <br> <br>
                         </div>
                         <div>
-                            <i class="fa-solid fa-lock"></i> <input name="senha" type="password" placeholder="Senha">
+                            <i class="fa-solid fa-lock"></i> <input class = "inputData" name="senha" type="password" placeholder="Senha">
                             <br> <br>
                         </div>
 
                         <div>
-                            <i class="fa-solid fa-check"></i> <input id="cpf" type="text" name="cpf" onkeypress="return numeros(event)"  placeholder="CPF"  minlength="14" maxlength="14" required>
+                            <i class="fa-solid fa-calendar-days"></i> <input name="data" type="date" placeholder="Data">
+                            <br> <br>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-check"></i> <input id="cpf" type="text" name="cpf"
+                                onkeypress="return numeros(event)" placeholder="CPF" minlength="11" maxlength="11"
+                                required>
                             <br> <br>
                         </div>
                         <div>
-                            <i class="fa-solid fa-phone"></i> <input id="telefone" type="text" name="telefone" onkeypress="return numeros(event)" placeholder="Telefone" minlength="14" maxlength="14" required>
+                            <i class="fa-solid fa-phone"></i> <input id="telefone" type="text" name="telefone"
+                                onkeypress="return numeros(event)" placeholder="Telefone" minlength="11" maxlength="11"
+                                required>
                             <br> <br>
                         </div>
                         <div class="botoesFinalizar1">
@@ -76,4 +85,5 @@
 
         </body>
         <script src="main.js" type="text/javascript"></script>
+
         </html>

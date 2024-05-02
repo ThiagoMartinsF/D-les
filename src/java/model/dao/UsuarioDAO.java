@@ -39,6 +39,7 @@ public class UsuarioDAO {
                 usuarios.setEmail(rs.getString("email"));
                 usuarios.setCpf(rs.getString("cpf"));
                 usuarios.setTelefone(rs.getString("telefone"));
+                
                
                 
                 usuario.add(usuarios);
@@ -62,12 +63,13 @@ public class UsuarioDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO usuario (nome, senha, email, cpf, telefone) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO usuario (nome, senha, email, cpf, telefone ) VALUES (?, ?, ?, ?, ? )");
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getSenha());
             stmt.setString(3, usuario.getEmail());
             stmt.setString(4, usuario.getCpf());
             stmt.setString(5, usuario.getTelefone());
+
            
             
             
@@ -142,6 +144,7 @@ public class UsuarioDAO {
            stmt.setString(3, usuario.getEmail());
            stmt.setString(4, usuario.getCpf());
            stmt.setString(5, usuario.getTelefone());
+           
                 
           stmt.executeUpdate();
          

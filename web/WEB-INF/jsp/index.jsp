@@ -37,9 +37,9 @@
             </div>
 
             <div class="logo">
-                <h1 class="titulo1">Fre</h1>
-                <h1 class="titulo2">e</h1>
-                <h1 class="titulo3">les</h1>
+                <h1 class="titulo1">Bon</h1>
+                <h1 class="titulo2">appe</h1>
+                <h1 class="titulo3">tit</h1>
             </div>
         </header>
 

@@ -5,6 +5,8 @@
  */
 package model.bean;
 
+import java.sql.Date;
+
 /**
  *
  * @author Senai
@@ -16,17 +18,21 @@ public class Usuario {
     private String email;
     private String cpf; 
     private String telefone;
+    private Date DataNascimento;
+    private int stats;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nome, String senha, String email, String cpf, String telefone) {
+    public Usuario(int idUsuario, String nome, String senha, String email, String cpf, String telefone, Date DataNascimento, int stats) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.senha = senha;
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.DataNascimento = DataNascimento;
+        this.stats = stats;
     }
 
     public int getIdUsuario() {
@@ -77,5 +83,21 @@ public class Usuario {
         this.telefone = telefone;
     }
 
+    public Date getDataNascimento() {
+        return DataNascimento;
+    }
+
+    public void setDataNascimento(Date DataNascimento) {
+        this.DataNascimento = DataNascimento;
+    }
+
+    public int getStats() {
+        return stats;
+    }
+
+    public void setStatus(int status) {
+        this.stats = status;
+    }
    
+       
 }

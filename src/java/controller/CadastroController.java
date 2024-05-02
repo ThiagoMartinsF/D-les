@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -66,7 +65,7 @@ public class CadastroController extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getServletPath();
 
-        if (url.equals("/cadastro")) {
+if (url.equals("/cadastro")) {
             String nextPage = "/WEB-INF/jsp/login.jsp";
             Usuario user = new Usuario();
             UsuarioDAO userDAO = new UsuarioDAO();
@@ -81,7 +80,7 @@ public class CadastroController extends HttpServlet {
 
                 if (user.getNome().trim().isEmpty() || user.getEmail().trim().isEmpty() || user.getSenha().trim().isEmpty()) {
                     nextPage = "/WEB-INF/jsp/cadastro.jsp";
-                    request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos.");
+                    request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessarios.");
                 } else {
                     userDAO.create(user);
                 }
