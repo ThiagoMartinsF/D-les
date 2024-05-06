@@ -21,17 +21,17 @@
                 <div class="categorias">
                     <div>
                         <a href="./Entrada">
-                            <p class="azul">Entradas</p>
+                            <i class="fa-solid fa-burger"></i>  <p class="azul">Entradas</p>
                         </a>
                     </div>
                     <div>
                         <a href="./Bebida">
-                            <p class="branco">bebidas</p>
+                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  <p class="branco">bebidas</p>
                         </a>
                     </div>
                     <div>
                         <a href="./Sobremesa">
-                            <p class="vermelho">sobremesa</p>
+                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i> <p class="vermelho">sobremesas</p>
                         </a>
                     </div>
                 </div>

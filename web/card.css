@@ -30,6 +30,13 @@ h1 {
 }
 
 
+#bebida{
+    color: aliceblue;
+}
+#sobremesa{
+    color: brown;
+}
+
 .containerProdutos {
     display: flex;
     justify-content: space-around;

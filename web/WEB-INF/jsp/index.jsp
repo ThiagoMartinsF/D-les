@@ -26,12 +26,12 @@
                 </div>
                 <div>
                     <a href="./Bebida">
-                        <i class="fa-solid fa-martini-glass-citrus"></i>  <p class="branco">bebidas</p>
+                        <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  <p class="branco">bebidas</p>
                     </a>
                 </div>
                 <div>
                     <a href="./Sobremesa">
-                        <i class="fa-solid fa-stroopwafel"></i>  <p class="vermelho">sobremesa</p>
+                        <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i>  <p class="vermelho">sobremesas</p>
                     </a>
                 </div>
             </div>
