@@ -3,7 +3,7 @@
     <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
     <html>
 
     <head>
@@ -21,17 +21,20 @@
             <div class="categorias">
                 <div>
                     <a href="./Entrada">
-                        <i class="fa-solid fa-burger"></i>  <p class="azul">Entradas</p>
+                        <i class="fa-solid fa-burger"></i>
+                        <p class="azul">Entradas</p>
                     </a>
                 </div>
                 <div>
                     <a href="./Bebida">
-                        <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  <p class="branco">bebidas</p>
+                        <i class="fa-solid fa-martini-glass-citrus" id="bebida"></i>
+                        <p class="branco">bebidas</p>
                     </a>
                 </div>
                 <div>
                     <a href="./Sobremesa">
-                        <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i>  <p class="vermelho">sobremesas</p>
+                        <i class="fa-solid fa-stroopwafel" id="sobremesa"></i>
+                        <p class="vermelho">sobremesas</p>
                     </a>
                 </div>
             </div>
@@ -41,18 +44,21 @@
                 <h1 class="titulo2">appe</h1>
                 <h1 class="titulo3">tit</h1>
             </div>
-            
-            
+
+
         </header>
 
 
         <main>
             <br>
-            <div id ="barraPesquisa">
-                <input type="text" placeholder="O que deseja?..."> <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <div id="barraPesquisa">
+                <form action="">
+                    <input type="text" placeholder="O que deseja?..."> <button><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
             <br>
-            
+
 
             <div class="carrossel">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
