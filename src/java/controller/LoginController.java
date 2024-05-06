@@ -48,7 +48,21 @@ public class LoginController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+           throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+             throws ServletException, IOException {
         String url = request.getServletPath();
         if (url.equals("/senha")) {
             String nextPage = "/WEB-INF/jsp/index.jsp";
@@ -59,7 +73,7 @@ public class LoginController extends HttpServlet {
             user.setSenha(request.getParameter("senha"));
 
             try {
-                Usuario userAutenticado = valida.validaUser(user);
+                Usuario userAutenticado = valida.valida(user);
 
                 if (userAutenticado != null && !userAutenticado.getEmail().trim().isEmpty()) {
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
@@ -79,21 +93,6 @@ public class LoginController extends HttpServlet {
         } else {
             processRequest(request, response);
         }
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-        
     }
 
     /**

@@ -106,7 +106,7 @@ public class UsuarioDAO {
         }
     }
     
-     public Usuario validaUser(Usuario user) {
+     public Usuario valida(Usuario user) {
         Usuario usuarioValido = new Usuario();
         try {
             Connection con = Conexao.conectar();
