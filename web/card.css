@@ -15,8 +15,8 @@ h1 {
     text-align: center; 
 }
 
-.titulo{
-    color: rgb(184, 214, 231);
+#titulo{
+    color: brown;
 }
 
 .titulo1{
@@ -133,4 +133,12 @@ footer {
     position: relative;
     margin-top: 10%;
     left: 80%;
+}
+
+
+
+#barraPesquisa{
+    position: relative;
+    left: 10%;
+    top: 3%;
 }

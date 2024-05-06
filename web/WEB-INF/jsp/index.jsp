@@ -16,7 +16,7 @@
         <header>
 
             <br>
-            <h1 class="titulo">Refeições</h1>
+            <h1 id="titulo">Refeições</h1>
 
             <div class="categorias">
                 <div>
@@ -41,11 +41,18 @@
                 <h1 class="titulo2">appe</h1>
                 <h1 class="titulo3">tit</h1>
             </div>
+            
+            
         </header>
 
 
         <main>
             <br>
+            <div id ="barraPesquisa">
+                <input type="text" placeholder="O que deseja?..."> <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <br>
+            
 
             <div class="carrossel">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

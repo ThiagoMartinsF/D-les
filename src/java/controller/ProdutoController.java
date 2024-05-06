@@ -6,11 +6,16 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Categoria;
+import model.bean.Produto;
+import model.dao.CategoriaDAO;
+import model.dao.ProdutoDAO;
 
 /**
  *
@@ -28,20 +33,39 @@ public class ProdutoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProdutoController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProdutoController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+throws ServletException, IOException {
+        ProdutoDAO produtosDAO = new ProdutoDAO();
+        CategoriaDAO categoriasDAO = new CategoriaDAO();
+        List<Categoria> categorias = categoriasDAO.listarCategorias();
+        request.setAttribute("categorias", categorias);
+        String url = request.getServletPath();
+        System.out.println(url);
+        if(url.equals("/cadastrar-produto")) {
+            String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        } else if(url.equals("/home")){
+            List<Produto> produtos = produtosDAO.read();
+            request.setAttribute("produtos", produtos);
+            String nextPage = "/WEB-INF/jsp/index.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        } else if (url.equals("/buscar-produtos")) {
+            String busca = request.getParameter("busca") != null ? request.getParameter("busca") : "";
+            if(busca.equals("")) {
+                String categoria = request.getParameter("cat");
+                List<Produto> produtos = produtosDAO.buscaCategoria(Integer.parseInt(categoria));
+                request.setAttribute("produtos", produtos);
+            } else {
+                busca = "%"+busca+"%";
+                List<Produto> produtos = produtosDAO.buscaProdutos(busca);
+                request.setAttribute("produtos", produtos);
+            }
+            String nextPage = "/WEB-INF/jsp/produtos.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
