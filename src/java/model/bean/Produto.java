@@ -14,14 +14,14 @@ public class Produto {
     private String nome;
     private Float preco;
     private String categoria;
-    private double descricao;
+    private String descricao;
     private int qtd;
     private Byte[] img;
 
     public Produto() {
     }
 
-    public Produto(int idProduto, String nome, Float preco, String categoria, double descricao, int qtd, Byte[] img) {
+    public Produto(int idProduto, String nome, Float preco, String categoria, String descricao, int qtd, Byte[] img) {
         this.idProduto = idProduto;
         this.nome = nome;
         this.preco = preco;
@@ -63,11 +63,11 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public double getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(double descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 

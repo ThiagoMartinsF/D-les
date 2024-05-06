@@ -18,13 +18,13 @@ public class Usuario {
     private String email;
     private String cpf; 
     private String telefone;
-    private Date dataNascimento;
+    private String dataNascimento;
     private int stats;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nome, String senha, String email, String cpf, String telefone, Date dataNascimento, int stats) {
+    public Usuario(int idUsuario, String nome, String senha, String email, String cpf, String telefone, String dataNascimento, int stats) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.senha = senha;
@@ -83,11 +83,11 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date DataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -95,9 +95,10 @@ public class Usuario {
         return stats;
     }
 
-    public void setStatus(int status) {
-        this.stats = status;
+    public void setStats(int stats) {
+        this.stats = stats;
     }
-   
+
+
        
 }

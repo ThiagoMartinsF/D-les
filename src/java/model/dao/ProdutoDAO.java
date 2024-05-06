@@ -33,10 +33,11 @@ public class ProdutoDAO {
                 Produto produtos = new Produto();                
                 produtos.setIdProduto(rs.getInt("idProduto"));
                 produtos.setNome(rs.getString("nome"));
+                produtos.setPreco(rs.getFloat("preco"));
                 produtos.setCategoria(rs.getString("categoria"));
                 produtos.setDescricao(rs.getString("descricao"));
                 produtos.setPreco(rs.getFloat("preco"));
-                produtos.setEstoque(rs.getInt("estoque"));
+                produtos.setQtd(rs.getInt("qtd"));
                
                 
                 produto.add(produtos);
@@ -60,12 +61,12 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, categoria, descriao, preco, estoque) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, categoria, descricao, qtd) VALUES (?, ?, ?, ?, ?)");
             stmt.setString(1, produto.getNome());
-            stmt.setString(2, produto.getCategoria());
-            stmt.setString(3, produto.getDescricao());
-            stmt.setFloat(4, (float) produto.getPreco());
-            stmt.setInt(5, produto.getEstoque());
+            stmt.setFloat(2, produto.getPreco());
+            stmt.setString(3, produto.getCategoria());
+            stmt.setString(4, produto.getDescricao());
+            stmt.setInt(5, produto.getQtd());
            
             
             
@@ -100,16 +101,16 @@ public class ProdutoDAO {
         }
     }
     
-    public Boolean validaProduto(Float preco, int estoque){
+    public Boolean validaProduto(Float preco, int qtd){
         Boolean validar = false;
         try{
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE preco = ?, estoque = ?");           
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE preco = ?, qtd = ?");           
             stmt.setFloat(1, preco);
-            stmt.setInt(2, estoque);
+            stmt.setInt(2, qtd);
                  
             rs = stmt.executeQuery();
             
@@ -133,12 +134,12 @@ public class ProdutoDAO {
         try {
           Connection conexao = Conexao.conectar();
           PreparedStatement stmt = null;
-          stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, categoria = ?, descricao = ?, preco = ?, estoque = ? WHERE idUsuario = ?");
+          stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, preco = ?, categoria = ?, descricao = ?, qtd = ? WHERE idUsuario = ?");
            stmt.setString(1, produto.getNome());
-           stmt.setString(2, produto.getCategoria());
-           stmt.setString(3, produto.getDescricao());
-           stmt.setFloat(4, (float) produto.getPreco());
-           stmt.setInt(5, produto.getEstoque());
+           stmt.setFloat(2, produto.getPreco());
+           stmt.setString(3, produto.getCategoria());
+           stmt.setString(4,  produto.getDescricao());
+           stmt.setInt(5, produto.getQtd());
                 
           stmt.executeUpdate();
          

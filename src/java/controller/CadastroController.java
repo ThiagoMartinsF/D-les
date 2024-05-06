@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -75,10 +76,11 @@ if (url.equals("/cadastro")) {
             user.setEmail(request.getParameter("email"));
             user.setCpf(request.getParameter("cpf"));
             user.setTelefone(request.getParameter("telefone"));
+            user.setDataNascimento(request.getParameter("data"));
 
             try {
 
-                if (user.getNome().trim().isEmpty() || user.getEmail().trim().isEmpty() || user.getSenha().trim().isEmpty()) {
+                if (user.getNome().trim().isEmpty() || user.getEmail().trim().isEmpty() || user.getSenha().trim().isEmpty() || user.getCpf().trim().isEmpty()) {
                     nextPage = "/WEB-INF/jsp/cadastro.jsp";
                     request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessarios.");
                 } else {
