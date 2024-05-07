@@ -44,6 +44,10 @@
         <servlet-name>BebidaController</servlet-name>
         <servlet-class>controller.BebidaController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroProduto</servlet-name>
+        <servlet-class>controller.CadastroProduto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -88,6 +92,11 @@
         <servlet-name>BebidaController</servlet-name>
         <url-pattern>/Bebida</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroProduto</servlet-name>
+        <url-pattern>/CadProduto</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

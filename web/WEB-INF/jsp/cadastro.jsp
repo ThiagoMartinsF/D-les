@@ -30,6 +30,7 @@
 
                 <br> <br>
                 <div class="container">
+                    <br>
                     <form action="cadastro" method="POST">
                         <div>
                             <i class="fa-solid fa-user"></i> <input name="nome" type="text" placeholder="Nome">
@@ -62,7 +63,7 @@
                                 required>
                             <br> <br>
                         </div>
-                        <div class="botoesFinalizar1">
+                        <div class="btn1">
                             <button type="submit" class="btn1">Confirmar</button>
                         </div>
                     </form>

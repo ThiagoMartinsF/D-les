@@ -212,7 +212,7 @@
 
 
 
-            <br>
+            
             <br>
             <div class="promo">
                 <h2 class="promoText">Promoções-</h2>
@@ -262,6 +262,7 @@
                             <a href="#" class="btn btn-primary">Adicionar</a>
                         </div>
                     </div>
+                    
 
                 </div>
 

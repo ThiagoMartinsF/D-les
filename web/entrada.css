@@ -55,6 +55,20 @@ h1 {
     text-align: center; 
 }
 
+.direitosP{
+    color: rgb(223, 36, 36);
+}
+
+footer {
+    background-color: rgb(70, 70, 70);
+    text-align: center;
+    width: 100%;
+    height: 8em;
+    border-radius: 5px;
+    margin: 0;
+    top: 0;
+}
+
 .botoesFinais{
     text-align: center;
 
