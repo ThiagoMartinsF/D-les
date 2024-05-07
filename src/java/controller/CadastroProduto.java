@@ -65,7 +65,7 @@ public class CadastroProduto extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getServletPath();
 
-if (url.equals("/cadProduto")) {
+if (url.equals("/CadProduto")) {
             String nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
             Produto produto = new Produto();
             ProdutoDAO produtoDAO = new ProdutoDAO();
@@ -78,7 +78,7 @@ if (url.equals("/cadProduto")) {
             try {
 
                 if (produto.getNome().trim().isEmpty() || produto.getDescricao().trim().isEmpty() || produto.getCategoria().trim().isEmpty()) {
-                    nextPage = "/WEB-INF/jsp/cadastro.jsp";
+                    nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
                     request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessarios.");
                 } else {
                     produtoDAO.create(produto);
@@ -87,8 +87,8 @@ if (url.equals("/cadProduto")) {
                 dispatcher.forward(request, response);
 
             } catch (Exception e) {
-                nextPage = "/WEB-INF/jsp/cadastro.jsp";
-                request.setAttribute("errorMessage", "Usuário ou senha inválidos");
+                nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
+                request.setAttribute("errorMessage", "Campo inválido");
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);
             }

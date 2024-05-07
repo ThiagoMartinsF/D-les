@@ -35,7 +35,7 @@
                 <div class="container">
                     <div class="divForm">
                         <br>
-                        <form action="cadastro" method="POST">
+                        <form action="./CadProduto" method="POST">
                             <div>
                                 <input name="nome" type="text" placeholder="Nome">
                                 <br> <br>
@@ -53,9 +53,9 @@
 
                             <div>
                                 <select id="categoria" name="categoria">
-                                    <option value="1">Entrada</option>
-                                    <option value="2">Bebida</option>
-                                    <option value="3">Sobremesa</option>
+                                    <option value="1">1 - Entrada</option>
+                                    <option value="2">2 - Bebida</option>
+                                    <option value="3">3 - Sobremesa</option>
                                 </select>
                             </div>
                             <br>

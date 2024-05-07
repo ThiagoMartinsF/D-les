@@ -18,11 +18,11 @@ h1 {
 }
 
 .divForm{
+    margin-top: 20%;
     border-radius:  25px;
     position: relative;
     width: 20%;
     background-color: rgb(110, 110, 110);
-    margin-top: 20%;
     left: 40%;
     text-align: center;
 }
@@ -72,5 +72,14 @@ footer {
     height: 8em;
     border-radius: 5px;
     margin: 0;
-    margin-top: 40%;
+    margin-top: 35%;
+}
+
+.direitos {
+    position: relative;
+    top: 25%;
+}
+
+.direitosP{
+    color: rgb(223, 36, 36);
 }
