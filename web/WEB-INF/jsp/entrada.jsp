@@ -45,7 +45,26 @@
             <br>
             <main>
                 <div class="promocao">
-
+                    <div class="produtosLista">
+            <h1 class="my-4">Listagem de Produtos</h1>
+            <div class="row">
+                <c:forEach var="produto" items="${produto}">
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <div class="imagemProduto">
+                                    <img src="${produto.img}" alt="${produto.nome}">
+                                </div>
+                                <h5 class="card-title">${produto.nome}</h5>
+                                <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                <p class="card-text">Descrição: ${produto.descricao}</p>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
 
                     <div class="containerProdutos">
 

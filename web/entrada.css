@@ -97,3 +97,7 @@ button{
 .vermelho{
     color: rgb(238, 5, 5);
 }
+
+.produtosLista{
+    width: 100%;
+}
