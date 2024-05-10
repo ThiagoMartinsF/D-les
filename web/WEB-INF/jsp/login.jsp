@@ -6,7 +6,7 @@
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link href="login.css" rel="stylesheet" type="text/css" />
+            <link href="./styles/login.css" rel="stylesheet" type="text/css"/>
             <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
             <title>Tela de Login</title>
         </head>

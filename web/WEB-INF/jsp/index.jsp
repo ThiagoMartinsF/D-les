@@ -8,7 +8,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="card.css">
+        <link href="./styles/card.css" rel="stylesheet" type="text/css"/>
         <title>Listagem de Produtos</title>
     </head>
 
@@ -45,7 +45,23 @@
                 <h1 class="titulo3">tit</h1>
             </div>
 
-
+            <div class="row">
+                <c:forEach var="produto" items="${produto}">
+                    <div class="col-md-4 mb-3">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <div class="imagemProduto">
+                                    <img src="${produto.img}" alt="${produto.nome}">
+                                </div>
+                                <h5 class="card-title">${produto.nome}</h5>
+                                <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                <p class="card-text">Descrição: ${produto.descricao}</p>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
         </header>
 
 

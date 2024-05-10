@@ -7,7 +7,7 @@
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link href="cadastro.css" rel="stylesheet" type="text/css" />
+            <link href="./styles/cadastro.css" rel="stylesheet" type="text/css"/>
             <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
             <title>Cadastro</title>
         </head>

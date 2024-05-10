@@ -6,7 +6,7 @@
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link href="cadProdutos.css" rel="stylesheet" type="text/css" />
+            <link href="./styles/cadProdutos.css" rel="stylesheet" type="text/css"/>
             <title>Cadastro de produtos</title>
         </head>
 

@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
                 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
                 crossorigin="anonymous">
-            <link href="sobremesa.css" rel="stylesheet" type="text/css" />
+            <link href="./styles/sobremesa.css" rel="stylesheet" type="text/css"/>
             <title>Pratos de Sobremesa</title>
         </head>
 
@@ -30,11 +30,7 @@
                             <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>   <p class="branco">bebidas</p>
                         </a>
                     </div>
-                    <div>
-                        <a href="./Sobremesa">
-                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i> <p class="vermelho">sobremesa</p>
-                        </a>
-                    </div>
+                   
                 </div>
 
                 <div class="logo">

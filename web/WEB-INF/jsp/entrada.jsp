@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
                 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
                 crossorigin="anonymous">
-            <link href="entrada.css" rel="stylesheet" type="text/css" />
+            <link href="./styles/entrada.css" rel="stylesheet" type="text/css"/>
             <title>Pratos de Entradas</title>
         </head>
 
@@ -19,11 +19,7 @@
                 <br>
                 <h1 class="titulo">Pratos de Entrada</h1>
                 <div class="categorias">
-                    <div>
-                        <a href="./Entrada">
-                            <i class="fa-solid fa-burger"></i>  <p class="azul">Entradas</p>
-                        </a>
-                    </div>
+                   
                     <div>
                         <a href="./Bebida">
                             <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  <p class="branco">bebidas</p>
@@ -47,23 +43,7 @@
                 <div class="promocao">
                     <div class="produtosLista">
             <h1 class="my-4">Listagem de Produtos</h1>
-            <div class="row">
-                <c:forEach var="produto" items="${produto}">
-                    <div class="col-md-4 mb-3">
-                        <div class="card card-custom">
-                            <div class="card-body">
-                                <div class="imagemProduto">
-                                    <img src="${produto.img}" alt="${produto.nome}">
-                                </div>
-                                <h5 class="card-title">${produto.nome}</h5>
-                                <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
-                                <p class="card-text">Valor: R$ ${produto.preco}</p>
-                                <p class="card-text">Descrição: ${produto.descricao}</p>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
+            
         </div>
 
                     <div class="containerProdutos">

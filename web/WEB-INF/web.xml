@@ -48,6 +48,14 @@
         <servlet-name>CadastroProduto</servlet-name>
         <servlet-class>controller.CadastroProduto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroUsuarioController</servlet-name>
+        <servlet-class>controller.CadastroUsuarioController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuscaController</servlet-name>
+        <servlet-class>controller.BuscaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -96,7 +104,14 @@
         <servlet-name>CadastroProduto</servlet-name>
         <url-pattern>/CadProduto</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>CadastroUsuarioController</servlet-name>
+        <url-pattern>/CadastroU</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscaController</servlet-name>
+        <url-pattern>/Busca</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
