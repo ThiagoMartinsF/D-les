@@ -57,8 +57,8 @@
         <servlet-class>controller.BuscaController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.htm</url-pattern>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroController</servlet-name>
@@ -83,10 +83,6 @@
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Produto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
-        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EntradaController</servlet-name>
