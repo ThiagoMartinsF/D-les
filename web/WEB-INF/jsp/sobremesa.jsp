@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="botoesFinais2">
-                    <a href="./index.htm"><button>Voltar</button></a>
+                    <a href="./Home"><button>Voltar</button></a>
                 </div>
             </main>
 

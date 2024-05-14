@@ -42,7 +42,7 @@
             <main>
                 <div class="promocao">
                     <div class="produtosLista">
-            <h1 class="my-4">Listagem de Produtos</h1>
+            
             
         </div>
 
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="botoesFinais2">
-                    <a href="./index.htm"><button>Voltar</button></a>
+                    <a href="./Home"><button>Voltar</button></a>
                 </div>
             </main>
 

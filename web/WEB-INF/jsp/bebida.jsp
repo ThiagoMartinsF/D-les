@@ -131,7 +131,7 @@
                 </div>
 
                 <div lass="botoesFinais2">
-                    <a href="./index.htm"><button>Voltar</button></a>
+                    <a href="./Home"><button>Voltar</button></a>
                 </div>
 
             </main>
