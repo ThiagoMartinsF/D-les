@@ -3,7 +3,7 @@ body {
 }
 header {
     background-color: rgb(70, 70, 70);
-    height: 8em;
+    height: 9em;
     border-radius: 5px;
 }
 
@@ -14,6 +14,19 @@ h1 {
 
 #titulo{
     color: brown;
+}
+
+#cad{
+    position: relative;
+    left: 95%;
+}
+
+#busca{
+    color: aliceblue;
+    text-decoration: none;
+    position: relative;
+    left: 10%;
+    top: -3%;
 }
 
 

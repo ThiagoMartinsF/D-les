@@ -18,6 +18,11 @@
 
                 <br>
                 <h1 class="titulo">Bebidas</h1>
+
+                <div class ="carrinho">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                
                 <div class="categorias">
                     <div>
                         <a href="./Entrada">
