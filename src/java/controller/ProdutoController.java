@@ -5,13 +5,19 @@
  */
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.bean.Categoria;
 import model.bean.Produto;
 import model.dao.CategoriaDAO;
@@ -40,11 +46,11 @@ throws ServletException, IOException {
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if(url.equals("/cadastrar-produto")) {
+        if(url.equals("/cadProdutos")) {
             String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-        } else if(url.equals("/home")){
+        } else if(url.equals("/Home")){
             List<Produto> produtos = produtosDAO.read();
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/index.jsp";
@@ -94,9 +100,41 @@ throws ServletException, IOException {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+       
+        Produto newProduto = new Produto();
+        newProduto.setNome(request.getParameter("nome"));
+        newProduto.setPreco(Float.parseFloat(request.getParameter("preco"))); 
+        newProduto.setDescricao(request.getParameter("descricao"));
+        newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
 
+        Part filePart = request.getPart("img");
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); 
+        if (fileName != null && !fileName.isEmpty()) {
+           
+            String basePath = getServletContext().getRealPath("/") + "assets"; 
+            File uploads = new File(basePath);
+            if (!uploads.exists()) {
+                uploads.mkdirs(); 
+            }
+            File file = new File(uploads, fileName);
+
+            try (InputStream input = filePart.getInputStream()) {
+                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (Exception e) {
+                e.printStackTrace(); 
+            }
+
+           
+            newProduto.setImg("assets/" + fileName);
+        } else {
+            newProduto.setImg(null);
+        }
+
+      
+        ProdutoDAO produtosD = new ProdutoDAO();
+        produtosD.create(newProduto);
+        response.sendRedirect("./home");
+    }
     /**
      * Returns a short description of the servlet.
      *

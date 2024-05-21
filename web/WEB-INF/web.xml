@@ -52,16 +52,8 @@
         <servlet-name>CadastroUsuarioController</servlet-name>
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>BuscaController</servlet-name>
-        <servlet-class>controller.BuscaController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CarrinhoController</servlet-name>
-        <servlet-class>controller.CarrinhoController</servlet-class>
-    </servlet>
     <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
+        <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -107,14 +99,6 @@
     <servlet-mapping>
         <servlet-name>CadastroUsuarioController</servlet-name>
         <url-pattern>/CadastroU</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>BuscaController</servlet-name>
-        <url-pattern>/Busca</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CarrinhoController</servlet-name>
-        <url-pattern>/Carrinho1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

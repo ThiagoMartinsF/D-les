@@ -55,167 +55,39 @@
 
             <main>
 
-                <div class="row">
-                    <c:forEach var="produto" items="${produto}">
-                        <div class="col-md-4 mb-3">
-                            <div class="card card-custom">
-                                <div class="card-body">
-                                    <div class="imagemProduto">
-                                        <img src="${produto.img}" alt="${produto.nome}">
-                                    </div>
-                                    <h5 class="card-title">${produto.nome}</h5>
-                                    <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
-                                    <p class="card-text">Valor: R$ ${produto.preco}</p>
-                                    <p class="card-text">Descrição: ${produto.descricao}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
 
                 <!--------<a id="cad" href="./CadProduto">cadProd</a> -------->
                 <br>
                 <br>
-                <a id="busca" href="./Busca">Buscar
-                    <i id="buscarI" class="fa-solid fa-magnifying-glass"></i>
-                </a>
+                
                 <br>
 
                 <div class="containerProdutos">
 
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Soupe à l'Oignon</h5>
-                            <p class="card-text"> Uma sopa de cebola caramelizada, coberta com fatias de pão e
-                                queijo derretido.</p>
-
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Terrine de Legumes</h5>
-                            <p class="card-text"> Uma terrina feita com uma variedade de legumes, geralmente servida
-                                fatiada com pão.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagemde capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rillettes</h5>
-                            <p class="card-text">Uma pasta feita com carne de porco cozida lentamente e desfiada,
-                                geralmente servida em torradas.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Tartare de Salmão</h5>
-                            <p class="card-text">Salmão cru picado e temperado com condimentos como cebola,
-                                alcaparras e endro, uma entrada fresca e saborosa.</p>
-
-                        </div>
+                    <div class="row">
+                        <c:forEach var="produto" items="${produtos}">
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <div class="imagemProduto">
+                                            <img src="${produto.img}" alt="${produto.nome}">
+                                        </div>
+                                        <h5 class="card-title">${produto.nome}</h5>
+                                        <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                        <p class="card-text">Descrição: ${produto.descricao}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
 
                 </div>
                 <br>
                 <br>
-                <br>
-                <br>
 
-                <div class="containerProdutos">
-
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Calvados</h5>
-                            <p class="card-text"> Uma bebida alcoólica feita de maçãs, semelhante ao conhaque,
-                                originária da região da Normandia.</p>
-
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Kir</h5>
-                            <p class="card-text"> Uma mistura de vinho branco (geralmente Bourgogne Aligoté) com licor
-                                de groselha, é uma bebida popular antes das refeições na França.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Kir Royale</h5>
-                            <p class="card-text">Similar ao Kir, mas feito com champanhe em vez de vinho branco,
-                                adicionando um toque de luxo à bebida.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Armagnac</h5>
-                            <p class="card-text">Outra variedade de conhaque, originária da região de Armagnac,
-                                conhecida por seu sabor rico e robusto.</p>
-
-                        </div>
-                    </div>
-
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-
-                <div class="containerProdutos">
-
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Coq au Vin</h5>
-                            <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                com cogumelos, cebolas e bacon.</p>
-
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Boeuf Bourguignon</h5>
-                            <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Ratatouille</h5>
-                            <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                pimentão, tomate e
-                                cebola, geralmente refogados em azeite de oliva.</p>
-
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">Bouillabaisse</h5>
-                            <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                de peixes,
-                                frutos do mar, tomate, açafrão e ervas.</p>
-
-                        </div>
-                    </div>
-
-                </div>
+               
+                
 
 
 

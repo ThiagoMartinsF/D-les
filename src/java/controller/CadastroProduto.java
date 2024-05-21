@@ -73,11 +73,11 @@ if (url.equals("/CadProduto")) {
             produto.setNome(request.getParameter("nome"));
             produto.setPreco(Float.parseFloat(request.getParameter("preco")));
             produto.setDescricao(request.getParameter("descricao"));
-            produto.setCategoria(request.getParameter("categoria"));
+            produto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
 
             try {
 
-                if (produto.getNome().trim().isEmpty() || produto.getDescricao().trim().isEmpty() || produto.getCategoria().trim().isEmpty()) {
+                if (produto.getNome().trim().isEmpty() || produto.getDescricao().trim().isEmpty()) {
                     nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
                     request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessarios.");
                 } else {

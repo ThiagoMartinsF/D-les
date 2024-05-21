@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="styles/carrinho.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -15,7 +16,7 @@
         <header>
 
             <br>
-            <h1 id="titulo">Cardapio</h1>
+            <h1 id="titulo">Carrinho</h1>
 
             <div class ="carrinho">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -33,7 +34,7 @@
 
         <main>
 
-            <!--------<div class="row">
+            <div class="row">
                 <c:forEach var="produto" items="${produto}">
                     <div class="col-md-4 mb-3">
                         <div class="card card-custom">
@@ -50,7 +51,7 @@
                     </div>
                 </c:forEach>
             </div>
-            ---->
+            
 
             <!--------<a id="cad" href="./CadProduto">cadProd</a> -------->
             <br>
