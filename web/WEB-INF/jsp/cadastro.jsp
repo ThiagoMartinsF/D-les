@@ -47,7 +47,7 @@
                         </div>
 
                         <div>
-                            <i class="fa-solid fa-calendar-days"></i> <input name="data" type="date" placeholder="Data">
+                            <i class="fa-solid fa-calendar-days"></i> <input name="data" type="date" min="1944-01-01" max="2006-01-01" placeholder="Data">
                             <br> <br>
                         </div>
 
