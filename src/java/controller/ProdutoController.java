@@ -39,18 +39,18 @@ public class ProdutoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-throws ServletException, IOException {
+            throws ServletException, IOException {
         ProdutoDAO produtosDAO = new ProdutoDAO();
         CategoriaDAO categoriasDAO = new CategoriaDAO();
         List<Categoria> categorias = categoriasDAO.listarCategorias();
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if(url.equals("/cadProdutos")) {
+        if (url.equals("/cadProdutos")) {
             String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-        } else if(url.equals("/Home")){
+        } else if (url.equals("/Home")) {
             List<Produto> produtos = produtosDAO.read();
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/index.jsp";
@@ -58,12 +58,12 @@ throws ServletException, IOException {
             dispatcher.forward(request, response);
         } else if (url.equals("/buscar-produtos")) {
             String busca = request.getParameter("busca") != null ? request.getParameter("busca") : "";
-            if(busca.equals("")) {
+            if (busca.equals("")) {
                 String categoria = request.getParameter("cat");
                 List<Produto> produtos = produtosDAO.buscaCategoria(Integer.parseInt(categoria));
                 request.setAttribute("produtos", produtos);
             } else {
-                busca = "%"+busca+"%";
+                busca = "%" + busca + "%";
                 List<Produto> produtos = produtosDAO.buscaProdutos(busca);
                 request.setAttribute("produtos", produtos);
             }
@@ -71,7 +71,7 @@ throws ServletException, IOException {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -100,41 +100,40 @@ throws ServletException, IOException {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         Produto newProduto = new Produto();
         newProduto.setNome(request.getParameter("nome"));
-        newProduto.setPreco(Float.parseFloat(request.getParameter("preco"))); 
+        newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setDescricao(request.getParameter("descricao"));
         newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
 
         Part filePart = request.getPart("img");
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); 
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
         if (fileName != null && !fileName.isEmpty()) {
-           
-            String basePath = getServletContext().getRealPath("/") + "assets"; 
+
+            String basePath = getServletContext().getRealPath("/") + "assets";
             File uploads = new File(basePath);
             if (!uploads.exists()) {
-                uploads.mkdirs(); 
+                uploads.mkdirs();
             }
             File file = new File(uploads, fileName);
 
             try (InputStream input = filePart.getInputStream()) {
                 Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (Exception e) {
-                e.printStackTrace(); 
+                e.printStackTrace();
             }
 
-           
             newProduto.setImg("assets/" + fileName);
         } else {
             newProduto.setImg(null);
         }
 
-      
         ProdutoDAO produtosD = new ProdutoDAO();
         produtosD.create(newProduto);
-        response.sendRedirect("./home");
+        response.sendRedirect("./Home");
     }
+
     /**
      * Returns a short description of the servlet.
      *

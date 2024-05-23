@@ -7,8 +7,7 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-                crossorigin="anonymous">
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <link href="./styles/sobremesa.css" rel="stylesheet" type="text/css"/>
             <title>Pratos de Sobremesa</title>
         </head>
@@ -45,96 +44,25 @@
             </header>
             <br>
             <main>
-                <div class="promocao">
+                <div class="containerProdutos">
 
-
-                    <div class="containerProdutos">
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
+                    <div class="row">
+                        <c:forEach var="produto" items="${produtos}">
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <div class="imagemProduto">
+                                            <img src="${produto.img}" alt="${produto.nome}">
+                                        </div>
+                                        <h5 class="card-title">${produto.nome}</h5>
+                                        <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                        <p class="card-text">Descrição: ${produto.descricao}</p>
+                                        
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <br>
-                    <br>
-                    <div class="containerProdutos">
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Coq au Vin</h5>
-                                <p class="card-text">Frango cozido em vinho tinto, geralmente servido
-                                    com cogumelos, cebolas e bacon.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Boeuf Bourguignon</h5>
-                                <p class="card-text"> Ensopado de carne de boi cozida lentamente em vinho
-                                    tinto da região da Borgonha, com cenouras, cebolas, cogumelos e ervas.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Ratatouille</h5>
-                                <p class="card-text">Um prato de legumes cozidos, como berinjela, abobrinha,
-                                    pimentão, tomate e
-                                    cebola, geralmente refogados em azeite de oliva.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Bouillabaisse</h5>
-                                <p class="card-text">Uma sopa de peixe tradicionalmente feita com uma variedade
-                                    de peixes,
-                                    frutos do mar, tomate, açafrão e ervas.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
+                        </c:forEach>
                     </div>
 
                 </div>
@@ -167,5 +95,5 @@
                 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                 crossorigin="anonymous"></script>
         </body>
-
+        
         </html>

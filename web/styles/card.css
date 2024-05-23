@@ -1,5 +1,7 @@
 body {
-    background-color: gray;  
+    background-color: gray; 
+    margin: 0;
+    padding: 0; 
 }
 header {
     background-color: rgb(70, 70, 70);
@@ -63,16 +65,20 @@ main{
 
 }
 
+.containerProdutos{
+    width: 70%;
+    text-align: center;
+    align-items: center;
+}
 
 
-footer {
+footer{
     background-color: rgb(70, 70, 70);
     text-align: center;
     width: 100%;
     height: 8em;
     border-radius: 5px;
-    margin: 0;
-    top: 80%;
+    margin-top: 70%;
 }
 
 .direitos {
@@ -153,10 +159,19 @@ footer {
     color: rgb(238, 5, 5);
 }
 
-.botoesFinai2{
+.botoesFinais{
+    text-align: center;
+
+}
+.botoesFinai1{
     position: relative;
     margin-top: 10%;
-    left: 80%;
+}
+
+.botoesFinais2{
+    position: relative;
+    margin-top: 10%;
+    left: 50%;
 }
 
 

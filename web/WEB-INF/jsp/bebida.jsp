@@ -6,9 +6,8 @@
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-                crossorigin="anonymous">
+           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <link href="./styles/bebidas.css" rel="stylesheet" type="text/css"/>
             <title>Bebidas</title>
         </head>
@@ -45,89 +44,27 @@
             </header>
             <br>
             <main>
+                <div class="containerProdutos">
 
-                <div class="promocao">
-
-
-                    <div class="containerProdutos">
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Vinho tinto</h5>
-                                <p class="card-text">A França é famosa por seus vinhos, incluindo os tintos, que vêm de regiões como Bordeaux, Borgonha e Rhône.</p>
-                                <a href="#" class="btn btn-primary">Visitar</a>
+                    <div class="row">
+                        <c:forEach var="produto" items="${produtos}">
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <div class="imagemProduto">
+                                            <img src="${produto.img}" alt="${produto.nome}">
+                                        </div>
+                                        <h5 class="card-title">${produto.nome}</h5>
+                                        <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                        <p class="card-text">Descrição: ${produto.descricao}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Vinho branco</h5>
-                                <p class="card-text"> Assim como os tintos, os vinhos brancos franceses são renomados, com variedades como Chardonnay e Sauvignon Blanc.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Champanhe</h5>
-                                <p class="card-text">Originário da região de Champagne, este vinho espumante é um símbolo de celebração em todo o mundo.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Pastis</h5>
-                                <p class="card-text">Uma bebida anisada típica da Provença, que se tornou popular em toda a França.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
+                        </c:forEach>
                     </div>
-                    <br>
-                    <br>
-                    <div class="containerProdutos">
 
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Calvados</h5>
-                                <p class="card-text"> Uma bebida alcoólica feita de maçãs, semelhante ao conhaque, originária da região da Normandia.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Kir</h5>
-                                <p class="card-text"> Uma mistura de vinho branco (geralmente Bourgogne Aligoté) com licor de groselha, é uma bebida popular antes das refeições na França.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Kir Royale</h5>
-                                <p class="card-text">Similar ao Kir, mas feito com champanhe em vez de vinho branco, adicionando um toque de luxo à bebida.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">
-                            <div class="card-body">
-                                <h5 class="card-title">Armagnac</h5>
-                                <p class="card-text">Outra variedade de conhaque, originária da região de Armagnac, conhecida por seu sabor rico e robusto.</p>
-                                <a href="#" class="btn btn-primary">Adicioar</a>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
-                <br>
-                <br>
                 <div class="botoesFinais">
                     <button>Confirmar</button>
                 </div>

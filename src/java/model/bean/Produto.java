@@ -20,7 +20,17 @@ public class Produto {
 
     public Produto() {
 
-}
+    }
+
+    public Produto(int idProduto, String nome, Float preco, int categoria, String descricao, int qtd, String img) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.preco = preco;
+        this.categoria = categoria;
+        this.descricao = descricao;
+        this.qtd = qtd;
+        this.img = img;
+    }
 
     public int getIdProduto() {
         return idProduto;
@@ -77,18 +87,5 @@ public class Produto {
     public void setImg(String img) {
         this.img = img;
     }
-
-    public Produto(int idProduto, String nome, Float preco, int categoria, String descricao, int qtd, String img) {
-        this.idProduto = idProduto;
-        this.nome = nome;
-        this.preco = preco;
-        this.categoria = categoria;
-        this.descricao = descricao;
-        this.qtd = qtd;
-        this.img = img;
-    }
-
-   
-    }
-
     
+}
