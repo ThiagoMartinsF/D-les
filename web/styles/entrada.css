@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding: 0;
-
     background-color: gray;
 }
 
@@ -76,6 +75,7 @@ footer {
 .botoesFinai1{
     position: relative;
     margin-top: 10%;
+    left: 10%;
 }
 button{
     border-radius: 20px;

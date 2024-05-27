@@ -1,5 +1,5 @@
 <%-- Document : bebida.sjp Created on : 15/04/2024, 16:42:44 Author : Senai --%>
-
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html>

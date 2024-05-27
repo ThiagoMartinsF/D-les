@@ -85,9 +85,7 @@
                 </div>
                 <br>
                 
-                <div class="botoesFinais">
-                    <button>Confirmar</button>
-                </div>
+                
                 <div class="botoesFinais1">
                     <a href="./Login"><button>LogOut</button></a>
                 </div>

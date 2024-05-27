@@ -58,7 +58,6 @@
                                         <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
                                         <p class="card-text">Valor: R$ ${produto.preco}</p>
                                         <p class="card-text">Descrição: ${produto.descricao}</p>
-                                        
                                     </div>
                                 </div>
                             </div>

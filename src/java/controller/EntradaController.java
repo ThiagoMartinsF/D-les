@@ -41,18 +41,13 @@ public class EntradaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         ProdutoDAO produtosDAO = new ProdutoDAO();
         CategoriaDAO categoriasDAO = new CategoriaDAO();
         List<Categoria> categorias = categoriasDAO.listarCategorias();
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if (url.equals("/cadProdutos")) {
-            String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
-        } else if (url.equals("/Entrada")) {
+         if (url.equals("/Entrada")) {
             List<Produto> produtos = produtosDAO.read();
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/entrada.jsp";
@@ -69,7 +64,7 @@ public class EntradaController extends HttpServlet {
                 List<Produto> produtos = produtosDAO.buscaProdutos(busca);
                 request.setAttribute("produtos", produtos);
             }
-            String nextPage = "/WEB-INF/jsp/produtos.jsp";
+            String nextPage = "/WEB-INF/jsp/entrada.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
@@ -102,8 +97,6 @@ public class EntradaController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-       
 
         Produto newProduto = new Produto();
         newProduto.setNome(request.getParameter("nome"));
@@ -135,7 +128,7 @@ public class EntradaController extends HttpServlet {
 
         ProdutoDAO produtosD = new ProdutoDAO();
         produtosD.create(newProduto);
-        response.sendRedirect("./Entrada");
+        response.sendRedirect("./Home");
     }
 
     /**

@@ -47,11 +47,7 @@ public class SobremesaController extends HttpServlet {
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if (url.equals("/cadProdutos")) {
-            String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
-        } else if (url.equals("/Sobremesa")) {
+        if (url.equals("/Sobremesa")) {
             List<Produto> produtos = produtosDAO.read();
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/sobremesa.jsp";
@@ -68,7 +64,7 @@ public class SobremesaController extends HttpServlet {
                 List<Produto> produtos = produtosDAO.buscaProdutos(busca);
                 request.setAttribute("produtos", produtos);
             }
-            String nextPage = "/WEB-INF/jsp/produtos.jsp";
+            String nextPage = "/WEB-INF/jsp/sobremesa.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
