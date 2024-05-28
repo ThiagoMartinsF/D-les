@@ -159,7 +159,7 @@ public class ProdutoDAO {
         
    }
     
-    public List<Produto> buscaProdutos(Int busca) {
+    public List<Produto> buscaProdutos(String busca) {
         List<Produto> produto = new ArrayList();
 
         try {

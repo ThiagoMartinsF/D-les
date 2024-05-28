@@ -73,7 +73,7 @@ public class Carrinho1Controller extends HttpServlet {
  
 
     
-    int idP = Integer.parseInt(request.getParameter("idProduto"));
+    int idP = Integer.parseInt(request.getParameter("id"));
     ProdutoDAO prodDao = new ProdutoDAO();
     Produto item = prodDao.buscaProdutos(idP);
     if (item.getIdProduto() > 0) {
