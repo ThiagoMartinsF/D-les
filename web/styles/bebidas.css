@@ -7,7 +7,7 @@ body{
 
 header {
     background-color: rgb(70, 70, 70);
-    height: 7em;
+    height: 9em;
     border-radius: 5px;
 }
 .titulo{
@@ -29,6 +29,22 @@ header {
 }
 #sobremesa{
     color: brown;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    width: 28em;
+    height: 13em;
 }
 
 
@@ -55,6 +71,7 @@ header {
 }
 
 h1 {
+    font-size: 2.0em;
     text-align: center; 
 }
 footer {
@@ -80,6 +97,7 @@ button{
 }
 
 .categorias{
+    top: 5%;
     justify-content: space-around;
     text-align: center;
     display: flex;

@@ -5,6 +5,7 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Carrinho;
+import model.bean.Produto;
+import model.dao.ProdutoDAO;
 
 /**
  *
@@ -64,9 +68,30 @@ public class Carrinho1Controller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    
+    Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
+ 
 
+    
+    int idP = Integer.parseInt(request.getParameter("idProduto"));
+    ProdutoDAO prodDao = new ProdutoDAO();
+    Produto item = prodDao.buscaProdutos(idP);
+    if (item.getIdProduto() > 0) {
+        carrinho.adicionarItem(item);
+    }
+    
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    PrintWriter out = response.getWriter();
+    out.print(toJson(carrinho));
+    out.flush();
+}
+    
+    
+private String toJson(Carrinho carrinho) {
+    Gson gson = new Gson();
+    return gson.toJson(carrinho.getItens());
+}
     /**
      * Returns a short description of the servlet.
      *
@@ -75,6 +100,6 @@ public class Carrinho1Controller extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

@@ -1,10 +1,11 @@
 <%-- Document : newjspsobremesa Created on : 15/04/2024, 16:43:12 Author : Senai --%>
-
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html>
 
         <head>
+            <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,7 +18,6 @@
 
                 <br>
                 <h1 class="titulo">Sobremesas</h1>
-
                 <div class ="carrinho">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
@@ -25,12 +25,14 @@
                 <div class="categorias">
                     <div>
                         <a href="./Entrada">
-                            <i class="fa-solid fa-burger"></i>  <p class="azul">Entradas</p>
+                            <i class="fa-solid fa-burger"></i> 
+                            <p class="azul">Entradas</p>
                         </a>
                     </div>
                     <div>
                         <a href="./Bebida">
-                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>   <p class="branco">bebidas</p>
+                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  
+                            <p class="branco">bebidas</p>
                         </a>
                     </div>
                    

@@ -5,6 +5,7 @@
         <html>
 
         <head>
+            <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -26,12 +27,14 @@
                    
                     <div>
                         <a href="./Bebida">
-                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i>  <p class="branco">bebidas</p>
+                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i> 
+                            <p class="branco">bebidas</p>
                         </a>
                     </div>
                     <div>
                         <a href="./Sobremesa">
-                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i> <p class="vermelho">sobremesas</p>
+                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i>
+                            <p class="vermelho">sobremesas</p>
                         </a>
                     </div>
                 </div>

@@ -73,7 +73,7 @@
                                             <img src="${produto.img}" alt="${produto.nome}">
                                         </div>
                                         <h5 class="card-title">${produto.nome}</h5>
-                                        <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                                        
                                         <p class="card-text">Valor: R$ ${produto.preco}</p>
                                         <p class="card-text">Descrição: ${produto.descricao}</p>
                                     </div>

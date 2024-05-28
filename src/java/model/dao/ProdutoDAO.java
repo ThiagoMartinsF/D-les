@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.bean.Produto;
-import model.bean.Usuario;
+
 
 
 public class ProdutoDAO {
@@ -159,7 +159,7 @@ public class ProdutoDAO {
         
    }
     
-    public List<Produto> buscaProdutos(String busca) {
+    public List<Produto> buscaProdutos(Int busca) {
         List<Produto> produto = new ArrayList();
 
         try {

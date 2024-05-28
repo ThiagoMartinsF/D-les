@@ -1,6 +1,6 @@
 body {
     background-color: gray; 
-   
+    
 }
 header {
     background-color: rgb(70, 70, 70);
@@ -30,6 +30,21 @@ h1 {
     top: -3%;
 }
 
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    width: 28em;
+    height: 13em;
+}
 
 
 .titulo1{
@@ -81,18 +96,15 @@ footer{
 }
 
 .direitos {
-    position: relative;
-    top: 25%;
+  
 }
 
 .direitosP{
     color: rgb(223, 36, 36);
 }
 
-.nomeLogo{
-    
+.nomeLogo{  
     font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-     
     top: 5%;
     left: 5%;
     display: flex;
@@ -110,14 +122,12 @@ footer{
 
 .prev-icon{
     color: blue;
-    
     top: 50%;
     left: 5%;
 }
 
 .next-icon{
     color: brown;
-    
     top: 50%;
     left: 95%;
 }
@@ -127,15 +137,11 @@ footer{
 }
 
 .carousel-indicators{
-    
+   
     top: 108%;
 }
 
-.promo{
-    position: relative;
-    left: 10%;
-    
-}
+
 
 .promoText{
     color: blue;
@@ -162,24 +168,19 @@ footer{
     text-align: center;
 
 }
-.botoesFinai1{
-    position: relative;
-    top: 80%;
+.botoesFinais1{
+    display: flex;
+    justify-content: center;
 }
 
 .botoesFinais2{
-    position: relative;
-    margin-top: 10%;
-    left: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 
 
-#barraPesquisa{
-    position: relative;
-    left: 10%;
-    top: 3%;
-}
+
 
 
 
@@ -197,7 +198,7 @@ footer{
 .imagemProduto img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Garante que a imagem cubra a área designada sem perder a proporção */
+    object-fit: cover; /* Garante que a imagem cubra a área designada sem perder a proporção*/
     border-radius: 0.25rem;
 }
 
