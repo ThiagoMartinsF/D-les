@@ -28,7 +28,6 @@
         <servlet-name>ProdutoController</servlet-name>
         <servlet-class>controller.ProdutoController</servlet-class>
     </servlet>
-   
     <servlet>
         <servlet-name>EntradaController</servlet-name>
         <servlet-class>controller.EntradaController</servlet-class>
@@ -48,6 +47,10 @@
     <servlet>
         <servlet-name>CadastroUsuarioController</servlet-name>
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Carrinho2Controller</servlet-name>
+        <servlet-class>controller.Carrinho2Controller</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
@@ -96,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>CadastroUsuarioController</servlet-name>
         <url-pattern>/CadastroU</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Carrinho2Controller</servlet-name>
+        <url-pattern>/Carrinho2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
