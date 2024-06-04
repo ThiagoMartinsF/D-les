@@ -159,37 +159,39 @@ public class ProdutoDAO {
         
    }
     
-    public List<Produto> buscaProdutos(String busca) {
-        List<Produto> produto = new ArrayList();
+    public List<Produto> buscaProdutos(String Busca) {
+        List<Produto> resultado = new ArrayList();
 
         try {
+      
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ? OR descricao LIKE ?");
-            stmt.setString(1, busca);
-            stmt.setString(2, busca);
+            
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt.setInt(1, idProduto);
+            
             
             rs = stmt.executeQuery();
             
+           
             while(rs.next()) {
-                Produto produtos = new Produto();
-                produtos.setIdProduto(rs.getInt("idProduto"));
-                produtos.setNome(rs.getString("nome"));
-                produtos.setPreco(rs.getFloat("preco"));
-                produtos.setCategoria(rs.getInt("categoria"));
-                produtos.setDescricao(rs.getString("descricao"));
-                produtos.setQtd(rs.getInt("qtd"));
-                produtos.setImg(rs.getString("img"));
-              
+                Produto prod = new Produto();
+                prod.setIdProduto(rs.getInt("idProduto"));
+                prod.setNome(rs.getString("nome"));
+                prod.setCategoria(rs.getInt("categoria"));
+                prod.setDescricao(rs.getString("descricao"));
+                prod.setPreco(rs.getFloat("preco"));
+                prod.setImg(rs.getString("img"));
                 
-                produto.add(produtos);
+                resultado.add(prod);
             }
         } catch (SQLException e) {
+            
             e.printStackTrace();
         }
-        return produto;
+        return resultado;
     }
     
     public List<Produto> buscaCategoria (int categoria) {

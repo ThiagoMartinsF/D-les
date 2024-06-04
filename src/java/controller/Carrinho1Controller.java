@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +19,8 @@ import model.bean.Carrinho;
 import model.bean.Produto;
 import model.dao.ProdutoDAO;
 
-/**
- *
- * @author Senai
- */
+@MultipartConfig
+
 @WebServlet(name = "Carrinho1Controller", urlPatterns = {"/Carrinho1"})
 public class Carrinho1Controller extends HttpServlet {
 
@@ -54,7 +53,14 @@ public class Carrinho1Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.print(toJson(carrinho));
+        out.flush();
     }
 
     /**
@@ -68,30 +74,29 @@ public class Carrinho1Controller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
-    Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
- 
+        Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
 
-    
-    int idP = Integer.parseInt(request.getParameter("id"));
-    ProdutoDAO prodDao = new ProdutoDAO();
-    Produto item = prodDao.buscaProdutos(idP);
-    if (item.getIdProduto() > 0) {
-        carrinho.adicionarItem(item);
+        
+        int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+        ProdutoDAO pDao = new ProdutoDAO();
+        Produto item = pDao.buscaProdutos(idProduto);
+        if (item.getIdProduto() > 0) {
+            carrinho.adicionarItem(item);
+        }
+
+        // Retorna a lista de itens do carrinho em formato JSON
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.print(toJson(carrinho));
+        out.flush();
     }
-    
-    response.setContentType("application/json");
-    response.setCharacterEncoding("UTF-8");
-    PrintWriter out = response.getWriter();
-    out.print(toJson(carrinho));
-    out.flush();
-}
-    
-    
-private String toJson(Carrinho carrinho) {
-    Gson gson = new Gson();
-    return gson.toJson(carrinho.getItens());
-}
+
+    private String toJson(Carrinho carrinho) {
+        Gson gson = new Gson();
+        return gson.toJson(carrinho.getItens());
+    }
+
     /**
      * Returns a short description of the servlet.
      *

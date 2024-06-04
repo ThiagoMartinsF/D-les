@@ -19,9 +19,18 @@
                 <br>
                 <h1 id="titulo">Cardapio</h1>
 
-                <div class ="carrinho">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <div id="carrinho">
+                <div id="backgroundCarrinho"></div>
+                <div id="carrinhoContainer">
+                    <div class="carrinhoHeader">
+                        <i id="fechaCarrinho" class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div id="carrinho-main"></div>
+                    <div class="carrinho-footer">
+                        <button class="btn btn-finalizar">FINALIZAR COMPRA</button>
+                    </div>
                 </div>
+            </div>
 
                 <div class="categorias">
                     <div>
