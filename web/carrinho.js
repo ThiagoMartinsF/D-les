@@ -30,7 +30,7 @@ function carregarCarrinho(){
                                                                           // Seleciona o contêiner onde os produtos do carrinho serão exibidos.
             const carrinhoMain = document.getElementById("carrinhoMain");
 
-                                              // Limpa o conteúdo atual do contêiner.
+                                              // Limpa o conteúdo atual do contêiner..
             carrinhoMain.innerHTML = "";
 
                                            // Itera sobre os dados retornados pelo servidor (cada 'produto' é um objeto).
