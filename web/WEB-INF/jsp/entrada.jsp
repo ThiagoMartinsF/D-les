@@ -15,35 +15,45 @@
 
         <body>
             <header>
-
-                <br>
-                <h1 class="titulo">Pratos de Entrada</h1>
-
-                <div class ="carrinho">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                
-                <div class="categorias">
-                   
-                    <div>
-                        <a href="./Bebida">
-                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i> 
-                            <p class="branco">bebidas</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="./Sobremesa">
-                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i>
-                            <p class="vermelho">sobremesas</p>
-                        </a>
-                    </div>
-                </div>
-
                 <div class="logo">
                     <h1 class="titulo1">Bon</h1>
                     <h1 class="titulo2">appe</h1>
                     <h1 class="titulo3">tit</h1>
                 </div>
+        
+                   
+                
+                <div class="categorias">
+                    <div>
+                        <a href="./Bebida">
+                            <i class="fa-solid fa-martini-glass-citrus" id = "bebida"></i> 
+                            <p class="branco">Bebidas</p>
+                        </a>
+                    </div>
+                   
+                    <div>
+                        <a href="./Sobremesa">
+                            <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i> 
+                            <p class="vermelho">sobremesa</p>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <button id="btnAbrir"><i class="fa-solid fa-shopping-cart"></i></button>
+                
+                <div id="carrinho">
+                    <div id="background-carrinho"></div>
+                    <div id="carrinho-container">
+                      <div class="carrinho-header">
+                         <button id="btnFechar" onclick="fechar()"><i class="fa-solid fa-xmark"></i></button> 
+                      </div>
+                      <div id="carrinho-main"></div>
+                      <div class="carrinho-footer">
+                        <button class="btn btn-finalizar">FINALIZAR COMPRA</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
             </header>
             <br>
             <main>
@@ -57,20 +67,20 @@
 
                     <div class="row">
                         <c:forEach var="produto" items="${produtos}">
-                            <div class="col-md-4 mb-3">
-                                <div class="card card-custom">
-                                    <div class="card-body">
-                                        <div class="imagemProduto">
-                                            <img src="${produto.img}" alt="${produto.nome}">
-                                        </div>
-                                        <h5 class="card-title">${produto.nome}</h5>
-                                        <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
-                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
-                                        <p class="card-text">Descrição: ${produto.descricao}</p>
-                                    </div>
-                                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card card-custom">
+                        <div class="card-body">
+                            <div class="imagemProduto">
+                                <img src="${produto.img}" alt="${produto.nome}">
                             </div>
-                        </c:forEach>
+                            <h5 class="card-title">${produto.nome}</h5>
+                            <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                            <p class="card-text">Valor: R$ ${produto.preco}</p>
+                        </div>
+                        <button class="btn btn-comprar" data-idproduto="${produto.idProduto}">COMPRAR</button>
+                    </div>
+                </div>
+            </c:forEach>
                     </div>
 
                 </div>
@@ -98,6 +108,10 @@
             </footer>
             
         </body>
+        
+        <script src="carrinho.js" type="text/javascript"></script>
+        
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>

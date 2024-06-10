@@ -47,7 +47,12 @@
                             </div>
 
                             <div>
-                                <input name="preco" type="text" placeholder="Preço">
+                                <input name="preco" type="number" placeholder="Preço">
+                                <br> <br>
+                            </div>
+                            
+                            <div>
+                                <input name="qtd" type="number" placeholder="Quantidade">
                                 <br> <br>
                             </div>
 
