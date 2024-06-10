@@ -67,7 +67,7 @@ public class ProdutoController extends HttpServlet {
                 List<Produto> produtos = produtosDAO.buscaProdutos(busca);
                 request.setAttribute("produtos", produtos);
             }
-            String nextPage = "/WEB-INF/jsp/produtos.jsp";
+            String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }

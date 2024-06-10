@@ -53,44 +53,40 @@ public class Carrinho1Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+  
+    Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
 
-        Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
+   
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    PrintWriter out = response.getWriter();
+    out.print(toJson(carrinho));
+    out.flush();
+}
 
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
-        out.print(toJson(carrinho));
-        out.flush();
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
+ 
+    Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
+ 
 
-        
-        int idProduto = Integer.parseInt(request.getParameter("idProduto"));
-        ProdutoDAO pDao = new ProdutoDAO();
-        Produto item = pDao.buscaProdutos(idProduto);
-        if (item.getIdProduto() > 0) {
-            carrinho.adicionarItem(item);
-        }
-
-        // Retorna a lista de itens do carrinho em formato JSON
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
-        out.print(toJson(carrinho));
-        out.flush();
+    // Adiciona o item ao carrinho
+    int idProduto = Integer.parseInt(request.getParameter("id"));
+    ProdutoDAO pDao = new ProdutoDAO();
+    Produto item = pDao.buscarProduto(idProduto);
+    if (item.getIdProduto() > 0) {
+        carrinho.adicionarItem(item);
     }
+
+    // Retorna a lista de itens do carrinho em formato JSON
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+    PrintWriter out = response.getWriter();
+    out.print(toJson(carrinho));
+    out.flush();
+}
 
     private String toJson(Carrinho carrinho) {
         Gson gson = new Gson();

@@ -19,7 +19,7 @@
                 <br>
                 <h1 id="titulo">Cardapio</h1>
 
-                <div id="carrinho">
+            <div id="carrinho">
                 <div id="backgroundCarrinho"></div>
                 <div id="carrinhoContainer">
                     <div class="carrinhoHeader">
@@ -27,7 +27,7 @@
                     </div>
                     <div id="carrinho-main"></div>
                     <div class="carrinho-footer">
-                        <button class="btn btn-finalizar">FINALIZAR COMPRA</button>
+                        <button class="btn btn-finalizar">Finalizar Compra</button>
                     </div>
                 </div>
             </div>
@@ -112,6 +112,7 @@
                 </div>
             </footer>
 
+            <script src="carrinho.js" type="text/javascript"></script>
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

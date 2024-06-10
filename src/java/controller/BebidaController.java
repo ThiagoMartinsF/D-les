@@ -40,47 +40,34 @@ public class BebidaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-        CategoriaDAO categoriasDAO = new CategoriaDAO();
         ProdutoDAO produtosDAO = new ProdutoDAO();
-        
-        
-        
+        CategoriaDAO categoriasDAO = new CategoriaDAO();
         List<Categoria> categorias = categoriasDAO.listarCategorias();
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
-        
-        
-        if(url.equals("/cadastrar-produto")) {
-          
-            String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
-        } else if(url.equals("/home")){
-          
+        System.out.println(url);
+         if (url.equals("/Bebida")) {
             List<Produto> produtos = produtosDAO.read();
             request.setAttribute("produtos", produtos);
-            String nextPage = "/WEB-INF/jsp/index.jsp";
+            String nextPage = "/WEB-INF/jsp/bebida.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-            
         } else if (url.equals("/buscar-produtos")) {
-            String nextPage = "/WEB-INF/jsp/produtos.jsp";
-            int categoriaAtual = request.getParameter("cat") != null ? Integer.parseInt(request.getParameter("cat")) : 0;
-            String buscaAtual = request.getParameter("busca") != null ? "%"+request.getParameter("busca")+"%" : "";
-            if(categoriaAtual > 0) {
-                List<Produto> produtos = produtosDAO.buscaCategoria(categoriaAtual);
+            String busca = request.getParameter("busca") != null ? request.getParameter("busca") : "";
+            if (busca.equals("")) {
+                String categoria = request.getParameter("cat");
+                List<Produto> produtos = produtosDAO.buscaCategoria(Integer.parseInt(categoria));
                 request.setAttribute("produtos", produtos);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
             } else {
-                List<Produto> produto = ProdutoDAO.buscaProdutos(buscaAtual);
-                request.setAttribute("produtos", produto);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
+                busca = "%" + busca + "%";
+                List<Produto> produtos = produtosDAO.buscaProdutos(busca);
+                request.setAttribute("produtos", produtos);
             }
+            String nextPage = "/WEB-INF/jsp/bebida.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

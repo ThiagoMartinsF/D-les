@@ -180,7 +180,11 @@ footer{
 }
 
 
-
+#carrinho{
+    position: relative;
+    left: 60%;
+    top: 20%;
+}
 
 
 
@@ -224,3 +228,4 @@ footer{
     font-weight: bold;
     color: #0056b3;
 }
+

@@ -159,23 +159,51 @@ public class ProdutoDAO {
         
    }
     
-    public List<Produto> buscaProdutos(String Busca) {
-        List<Produto> resultado = new ArrayList();
-
+    public Produto buscarProduto(int idProduto) {
+        Produto produto = new Produto();
+        
         try {
-      
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            
-            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE  id_produto = ?");
             stmt.setInt(1, idProduto);
-            
             
             rs = stmt.executeQuery();
             
-           
+            if(rs.next()) {
+                produto.setIdProduto(rs.getInt("idProduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setCategoria(rs.getInt("categoria"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setImg(rs.getString("img"));
+                produto.setQtd(rs.getInt("qtd"));
+            } else {
+                produto.setIdProduto(0);
+            }
+        } catch(SQLException e ) {
+            e.printStackTrace();
+        }
+        
+        return produto;
+    }
+    
+    public List<Produto> buscaProdutos(String busca) {
+        List<Produto> resultadoBusca = new ArrayList();
+
+        try {
+            
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt.setString(1, busca);
+            stmt.setString(2, busca);
+            
+            rs = stmt.executeQuery();
+        
             while(rs.next()) {
                 Produto prod = new Produto();
                 prod.setIdProduto(rs.getInt("idProduto"));
@@ -184,14 +212,15 @@ public class ProdutoDAO {
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
                 prod.setImg(rs.getString("img"));
+                prod.setQtd(rs.getInt("qtd"));
                 
-                resultado.add(prod);
+                resultadoBusca.add(prod);
             }
         } catch (SQLException e) {
             
             e.printStackTrace();
         }
-        return resultado;
+        return resultadoBusca;
     }
     
     public List<Produto> buscaCategoria (int categoria) {

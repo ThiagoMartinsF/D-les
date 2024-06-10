@@ -11,7 +11,6 @@ function fechar() {
     carrinho.classList.remove("aberto");
 }
 
-fecharCarrinho.addEventListener("click", fechar);
 background.addEventListener("click", fechar);
 
 // Função para carregar carrinho.
@@ -81,7 +80,7 @@ function carregarCarrinho(){
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
                                                                      // Obtém o ID do produto a partir do atributo data-idproduto
-            const idProduto = this.getAttribute("dataIdproduto");
+            const idProduto = this.getAttribute("data-idproduto");
                                                                      //chama a funcao adicionarCarrinho.
             adicionarItemAoCarrinho(idProduto);
         });
