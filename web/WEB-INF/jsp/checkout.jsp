@@ -8,7 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles/checkout.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body>
@@ -67,7 +69,11 @@
                 </div>
 
             </main>
-        <footer></footer>
+        <footer>
+                <div class="direitos">
+                    <p class="direitosP">@todos os direitos reservados.</p>
+                </div>
+            </footer>
     </body>
         <script src="carrinho.js" type="text/javascript"></script>
 </html>
