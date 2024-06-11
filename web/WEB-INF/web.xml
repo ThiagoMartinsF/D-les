@@ -52,6 +52,10 @@
         <servlet-name>Carrinho2Controller</servlet-name>
         <servlet-class>controller.Carrinho2Controller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckoutController</servlet-name>
+        <servlet-class>controller.CheckoutController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>Carrinho2Controller</servlet-name>
         <url-pattern>/Carrinho2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutController</servlet-name>
+        <url-pattern>/Checkout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

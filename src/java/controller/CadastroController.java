@@ -72,11 +72,12 @@ if (url.equals("/cadastro")) {
             UsuarioDAO userDAO = new UsuarioDAO();
 
             user.setNome(request.getParameter("nome"));
-            user.setSenha(request.getParameter("senha"));
             user.setEmail(request.getParameter("email"));
+            user.setSenha(request.getParameter("senha"));
+            user.setDataNascimento(request.getParameter("data"));
             user.setCpf(request.getParameter("cpf"));
             user.setTelefone(request.getParameter("telefone"));
-            user.setDataNascimento(request.getParameter("data"));
+            
 
             try {
 
