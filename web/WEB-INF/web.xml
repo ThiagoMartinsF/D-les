@@ -56,6 +56,10 @@
         <servlet-name>CheckoutController</servlet-name>
         <servlet-class>controller.CheckoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EnderecoController</servlet-name>
+        <servlet-class>controller.EnderecoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnderecoController</servlet-name>
+        <url-pattern>/Endereco</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

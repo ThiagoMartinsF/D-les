@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/06/2024, 17:20:42
+    Author     : Senai
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    
+    background-color: gray;
+}
+
+header {
+    background-color: rgb(70, 70, 70);
+    height: 9em;
+    border-radius: 5px;
+}
+.titulo{
+    color: brown;
+}
+
+.titulo1{
+    color: rgb(0, 3, 170);
+}
+.titulo2{
+    color: rgb(240, 248, 255);
+}
+.titulo3{
+    color: rgb(184, 7, 1);
+}
+
+#bebida{
+    color: aliceblue;
+}
+#sobremesa{
+    color: brown;
+}
+.logo{
+    display: flex;
+    flex-wrap: wrap ;
+    text-align: center;
+    position: absolute;
+    top: 2%;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row; 
+    
+}
+
+
+
+.containerProdutos {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    border-color: rgb(209, 35, 35);
+    flex-direction: row;
+
+}
+
+.direitosP{
+    color: rgb(223, 36, 36);
+}
+
+h1 {
+    font-size: 2.0em;
+    text-align: center; 
+}
+footer {
+    background-color: rgb(70, 70, 70);
+    text-align: center;
+    width: 100%;
+    height: 8em;
+    border-radius: 5px;
+    margin: 0;
+    top: 0;
+}
+
+.botoesFinais{
+    text-align: center;
+
+}
+.botoesFinai1{
+    position: relative;
+    margin-top: 10%;
+}
+button{
+    border-radius: 20px;
+}
+
+.categorias{
+    top: 5%;
+    justify-content: space-around;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.azul{
+    color: blue;
+}
+.branco{
+    color: rgb(255, 255, 255);
+}
+.vermelho{
+    color: rgb(238, 5, 5);
+}
+
+.botoesFinai2{
+    position: relative;
+    margin-top: 10%;
+    left: 80%;
+}

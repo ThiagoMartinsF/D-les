@@ -3,6 +3,7 @@
     Created on : 03/06/2024, 16:46:54
     Author     : Senai
 --%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -61,7 +62,7 @@
                     <button>Confirmar</button>
                 </div>
                 <div class="botoesFinais1">
-                    <a href="./Login"><button>LogOut</button></a>
+                    <a href="./Login.jsp"><button>LogOut</button></a>
                 </div>
 
                 <div lass="botoesFinais2">
