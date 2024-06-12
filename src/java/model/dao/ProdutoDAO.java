@@ -37,7 +37,7 @@ public class ProdutoDAO {
                 produtos.setCategoria(rs.getInt("categoria"));
                 produtos.setDescricao(rs.getString("descricao"));
                 produtos.setQtd(rs.getInt("Qtd"));
-               
+                produtos.setImg(rs.getString("img"));
                
                 
                 produto.add(produtos);
@@ -61,7 +61,7 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, categoria, descricao, qtd, img) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, categoria, descricao, qtd, img) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, produto.getNome());
             stmt.setFloat(2, produto.getPreco());
             stmt.setInt(3, produto.getCategoria());

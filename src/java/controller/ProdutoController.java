@@ -106,7 +106,6 @@ public class ProdutoController extends HttpServlet {
         newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setDescricao(request.getParameter("descricao"));
         newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
-
         Part filePart = request.getPart("img");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
         if (fileName != null && !fileName.isEmpty()) {
