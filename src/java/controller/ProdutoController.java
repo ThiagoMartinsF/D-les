@@ -48,7 +48,7 @@ public class ProdutoController extends HttpServlet {
         request.setAttribute("categorias", categorias);
         String url = request.getServletPath();
         System.out.println(url);
-        if (url.equals("/cadProdutos")) {
+        if (url.equals("./CadProdutos")) {
             String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
@@ -102,40 +102,38 @@ public class ProdutoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        if (url.equals("/CadProduto")){
+
         Produto newProduto = new Produto();
         newProduto.setNome(request.getParameter("nome"));
         newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setDescricao(request.getParameter("descricao"));
         newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
+        newProduto.setQtd(Integer.parseInt(request.getParameter("qtd")));
         Part filePart = request.getPart("img");
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        if (fileName != null && !fileName.isEmpty()) {
-
-            String basePath = getServletContext().getRealPath("/") + "assets";
-            File uploads = new File(basePath);
-            if (!uploads.exists()) {
-                uploads.mkdirs();
-            }
-            File file = new File(uploads, fileName);
-
-            try (InputStream input = filePart.getInputStream()) {
-                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            newProduto.setImg("assets/" + fileName);
-        } else {
-            newProduto.setImg(null);
+    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+    if (fileName != null && !fileName.isEmpty()) {
+        String basePath = getServletContext().getRealPath("/") + "assets";
+        File uploads = new File(basePath);
+        if (!uploads.exists()) {
+            uploads.mkdirs();
         }
+        File file = new File(uploads, fileName);
 
-        ProdutoDAO produtosD = new ProdutoDAO();
-        produtosD.create(newProduto);
-        response.sendRedirect("./Home");
+        try (InputStream input = filePart.getInputStream()) {
+            Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        newProduto.setImg("assets/" + fileName);
+    } else {
+        newProduto.setImg(null);
     }
-    }
+
+    ProdutoDAO produtosD = new ProdutoDAO();
+    produtosD.create(newProduto);
+    response.sendRedirect("./Home");
+            }
+    
     /**
      * Returns a short description of the servlet.
      *

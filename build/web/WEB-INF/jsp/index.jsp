@@ -35,10 +35,15 @@
                         </a>
                     </div>
                     <div>
-                        <a href="./Sobremesa">
+                        <a href="/buscar-produtos?cat=${categoria.idCategoria}&busca">${categoria.nome}</a>
                             <i class="fa-solid fa-stroopwafel" id="sobremesa"></i>
                             <p class="vermelho">sobremesas</p>
                         </a>
+                    </div>
+                    <div>
+                        <c:forEach var="produto" items="${produtos}">
+                        <a href="/buscar-produtos?cat=${categoria.idCategoria}&busca">${categoria.nome}</a>
+                        </c:forEach>
                     </div>
                 </div>
 

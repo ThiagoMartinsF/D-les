@@ -64,7 +64,7 @@
                                 </select>
                             </div>
                             <div>
-                                <input type="file" name="img" id="img">
+                                <input type="file" name="img">
                             </div>
                             <br>
                             <div class="botoesFinalizar1">

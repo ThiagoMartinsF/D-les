@@ -59,15 +59,15 @@ public class ProdutoDAO {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
-            ResultSet rs = null;
            
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, categoria, descricao, qtd, img) VALUES (?, ?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, categoria, descricao, img, qtd) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, produto.getNome());
             stmt.setFloat(2, produto.getPreco());
             stmt.setInt(3, produto.getCategoria());
             stmt.setString(4, produto.getDescricao());
-            stmt.setInt(5, produto.getQtd());
-            stmt.setString(6, produto.getImg());
+            stmt.setString(5, produto.getImg());
+            stmt.setInt(6, produto.getQtd());
+            
            
            
             
