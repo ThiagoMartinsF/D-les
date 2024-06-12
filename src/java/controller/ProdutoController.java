@@ -14,6 +14,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,7 @@ import model.dao.ProdutoDAO;
  *
  * @author Senai
  */
+@MultipartConfig
 public class ProdutoController extends HttpServlet {
 
     /**
@@ -100,7 +102,8 @@ public class ProdutoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String url = request.getServletPath();
+        if (url.equals("/CadProduto")){
         Produto newProduto = new Produto();
         newProduto.setNome(request.getParameter("nome"));
         newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
@@ -132,7 +135,7 @@ public class ProdutoController extends HttpServlet {
         produtosD.create(newProduto);
         response.sendRedirect("./Home");
     }
-
+    }
     /**
      * Returns a short description of the servlet.
      *
