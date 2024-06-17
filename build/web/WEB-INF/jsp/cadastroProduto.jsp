@@ -37,22 +37,22 @@
                         <br>
                         <form action="./CadProduto" method="POST">
                             <div>
-                                <input name="nome" type="text" placeholder="Nome">
+                                <input name="nome" id="nome" type="text" placeholder="Nome">
                                 <br> <br>
                             </div>
 
                             <div>
-                                <input name="descricao" type="text" placeholder="Descricao">
+                                <input name="descricao" id="descricao" type="text" placeholder="Descricao">
                                 <br> <br>
                             </div>
 
                             <div>
-                                <input name="preco" type="number" placeholder="Preço">
+                                <input name="preco" step="0.01" id="preco" type="number" placeholder="Preço">
                                 <br> <br>
                             </div>
                             
                             <div>
-                                <input name="qtd" type="number" placeholder="Quantidade">
+                                <input name="qtd" id="qtd" type="number" placeholder="Quantidade">
                                 <br> <br>
                             </div>
 

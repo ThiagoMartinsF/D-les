@@ -53,6 +53,42 @@ public class ProdutoDAO {
 
     }
 
+    public List<Produto> read2() {
+        List<Produto> produtos = new ArrayList();
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM produto");
+           
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Produto produto = new Produto();
+                produto.setIdProduto(rs.getInt("idProduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setPreco(rs.getFloat("preco"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setQtd(rs.getInt("Qtd"));
+                produto.setImg(rs.getString("img"));
+                produto.setId_categoria(rs.getInt("id_categoria"));
+
+                produtos.add(produto);
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return produtos;
+
+    }
+    
     public void create(Produto produto) {
         try {
             Connection conexao = Conexao.conectar();
@@ -61,10 +97,10 @@ public class ProdutoDAO {
             stmt = conexao.prepareStatement("INSERT INTO produto (nome, preco, descricao, img, qtd, id_categoria) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, produto.getNome());
             stmt.setFloat(2, produto.getPreco());
-            stmt.setString(4, produto.getDescricao());
-            stmt.setString(5, produto.getImg());
-            stmt.setInt(6, produto.getQtd());
-            stmt.setInt(7, produto.getId_categoria());
+            stmt.setString(3, produto.getDescricao());
+            stmt.setString(4, produto.getImg());
+            stmt.setInt(5, produto.getQtd());
+            stmt.setInt(6, produto.getId_categoria());
 
             stmt.executeUpdate();
             stmt.close();

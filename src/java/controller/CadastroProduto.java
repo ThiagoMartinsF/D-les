@@ -74,7 +74,7 @@ if (url.equals("/CadProduto")) {
             produto.setPreco(Float.parseFloat(request.getParameter("preco")));
             produto.setDescricao(request.getParameter("descricao"));
             produto.setQtd(Integer.parseInt(request.getParameter("qtd")));
-            produto.setId_categoria(Integer.parseInt(request.getParameter("id_categoria")));
+            produto.setId_categoria(Integer.parseInt(request.getParameter("categoria")));
 
             try {
 

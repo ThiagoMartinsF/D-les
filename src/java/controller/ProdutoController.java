@@ -53,7 +53,7 @@ public class ProdutoController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         } else if (url.equals("/Home")) {
-            List<Produto> produtos = produtosDAO.buscaProdutos("");
+            List<Produto> produtos = produtosDAO.read2();
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
