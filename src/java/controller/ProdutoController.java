@@ -53,7 +53,7 @@ public class ProdutoController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         } else if (url.equals("/Home")) {
-            List<Produto> produtos = produtosDAO.read();
+            List<Produto> produtos = produtosDAO.buscaProdutos("");
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
@@ -107,8 +107,8 @@ public class ProdutoController extends HttpServlet {
         newProduto.setNome(request.getParameter("nome"));
         newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setDescricao(request.getParameter("descricao"));
-        newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
         newProduto.setQtd(Integer.parseInt(request.getParameter("qtd")));
+        newProduto.setId_categoria(Integer.parseInt(request.getParameter("id_categoria")));
         Part filePart = request.getPart("img");
     String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
     if (fileName != null && !fileName.isEmpty()) {

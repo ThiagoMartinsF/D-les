@@ -13,23 +13,13 @@ public class Produto {
     private int idProduto;
     private String nome;
     private Float preco;
-    private int categoria;
     private String descricao;
     private int qtd;
     private String img;
+    private int id_categoria;
 
     public Produto() {
 
-    }
-
-    public Produto(int idProduto, String nome, Float preco, int categoria, String descricao, int qtd, String img) {
-        this.idProduto = idProduto;
-        this.nome = nome;
-        this.preco = preco;
-        this.categoria = categoria;
-        this.descricao = descricao;
-        this.qtd = qtd;
-        this.img = img;
     }
 
     public int getIdProduto() {
@@ -56,14 +46,6 @@ public class Produto {
         this.preco = preco;
     }
 
-    public int getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -87,5 +69,24 @@ public class Produto {
     public void setImg(String img) {
         this.img = img;
     }
-    
+
+    public int getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+
+    public Produto(int idProduto, String nome, Float preco, String descricao, int qtd, String img, int id_categoria) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.preco = preco;
+        this.descricao = descricao;
+        this.qtd = qtd;
+        this.img = img;
+        this.id_categoria = id_categoria;
+    }
+
+   
 }

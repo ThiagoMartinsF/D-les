@@ -47,7 +47,7 @@ public class BebidaController extends HttpServlet {
         String url = request.getServletPath();
         System.out.println(url);
          if (url.equals("/Bebida")) {
-            List<Produto> produtos = produtosDAO.read();
+            List<Produto> produtos = produtosDAO.read(2);
             request.setAttribute("produtos", produtos);
             String nextPage = "/WEB-INF/jsp/bebida.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
@@ -101,7 +101,7 @@ public class BebidaController extends HttpServlet {
         newProduto.setNome(request.getParameter("nome"));
         newProduto.setPreco(Float.parseFloat(request.getParameter("preco")));
         newProduto.setDescricao(request.getParameter("descricao"));
-        newProduto.setCategoria(Integer.parseInt(request.getParameter("categoria")));
+        newProduto.setId_categoria(Integer.parseInt(request.getParameter("id_categoria")));
 
         Part filePart = request.getPart("img");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();

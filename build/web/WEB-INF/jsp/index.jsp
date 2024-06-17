@@ -35,7 +35,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="/buscar-produtos?cat=${categoria.idCategoria}&busca">${categoria.nome}</a>
+                        <a href="./Sobremesa"</a>
                             <i class="fa-solid fa-stroopwafel" id="sobremesa"></i>
                             <p class="vermelho">sobremesas</p>
                         </a>

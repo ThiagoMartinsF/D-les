@@ -64,26 +64,26 @@
         </div>
 
             <div class="containerProdutos">
-
-                    <div class="row">
-                        <c:forEach var="produto" items="${produtos}">
+    <div class="row">
+        <c:forEach var="produto" items="${produtos}">
+            <c:if test="${produto.id_categoria == 3}">
                 <div class="col-md-4 mb-3">
                     <div class="card card-custom">
                         <div class="card-body">
-                            <div class="imagemProduto">
+                           <%-- <div class="imagemProduto">
                                 <img src="${produto.img}" alt="${produto.nome}">
-                            </div>
+                            </div> --%>
                             <h5 class="card-title">${produto.nome}</h5>
-                            <p class="card-text categoria-text">Categoria: ${produto.categoria}</p>
+                            <p class="card-text categoria-text">Categoria: ${produto.id_categoria}</p>
                             <p class="card-text">Valor: R$ ${produto.preco}</p>
                         </div>
                         <button class="btn btn-comprar" data-idproduto="${produto.idProduto}">COMPRAR</button>
                     </div>
                 </div>
-            </c:forEach>
-                    </div>
-
-                </div>
+            </c:if>
+        </c:forEach>
+    </div>
+</div>
 
        
                 </div>
