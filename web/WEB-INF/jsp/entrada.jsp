@@ -49,7 +49,7 @@
                       </div>
                       <div id="carrinho-main"></div>
                       <div class="carrinho-footer">
-                        <button class="btn btn-finalizar">FINALIZAR COMPRA</button>
+                        <a href="./Checkout"><button class="btn btn-finalizar">FINALIZAR COMPRA</button></a>
                       </div>
                     </div>
                   </div>
