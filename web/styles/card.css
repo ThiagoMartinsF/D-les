@@ -167,16 +167,18 @@ footer{
 
 .botoesFinais{
     text-align: center;
-
+     background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
 }
 .botoesFinais1{
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
 }
 
 .botoesFinais2{
     display: flex;
     justify-content: center;
+     background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
 }
 
 

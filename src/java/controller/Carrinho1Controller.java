@@ -72,7 +72,7 @@ public class Carrinho1Controller extends HttpServlet {
     Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
  
 
-    // Adiciona o item ao carrinho
+    // Adiciona o item
     int idProduto = Integer.parseInt(request.getParameter("id"));
     ProdutoDAO pDao = new ProdutoDAO();
     Produto item = pDao.buscarProduto(idProduto);
@@ -80,7 +80,7 @@ public class Carrinho1Controller extends HttpServlet {
         carrinho.adicionarItem(item);
     }
 
-    // Retorna a lista de itens do carrinho em formato JSON
+    // Retorna a lista de itens 
     response.setContentType("application/json");
     response.setCharacterEncoding("UTF-8");
     PrintWriter out = response.getWriter();
