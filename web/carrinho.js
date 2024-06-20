@@ -38,14 +38,14 @@ function carregarCarrinho(){
                 const divP = document.createElement("div");
                 divP.classList.add("produto");
 
-                // Cria uma div para conter a imagem do produto.
+                                                                            // Cria uma div para conter a imagem do produto.
                 const divImg = document.createElement("div");
-                divImg.classList.add("containerImg"); // Adiciona a classe containerImg da div
+                divImg.classList.add("containerImg");                       // Adiciona a classe containerImg da div
                 divImg.innerHTML = '<img src="' + produto.imagem + '" >'; // Define o conteúdo (imagem) da div
-
-                // Cria uma nova div para conter as informações do produto
+                
+                                                                             // Cria uma nova div para conter as informações do produto
                 const divInfo = document.createElement("div");
-                divInfo.classList.add("containerInfo"); // Adiciona a classe containerInfo a div
+                divInfo.classList.add("containerInfo");                     // Adiciona a classe containerInfo a div
                 divInfo.innerHTML = '<h3>' + produto.nome + '</h3><h4 class="preco">R$ ' + produto.valor.toFixed(2) + '</h4>'; // Define o conteúdo (nome e preço) da div
 
                 // Adiciona as divs 
@@ -64,7 +64,7 @@ function carregarCarrinho(){
 // Função para adicionar um item no carrinho.
     function adicionarItemAoCarrinho(idProduto) {
         const request = new XMLHttpRequest();
-        request.open("POST", "carrinho", true);                                         // Configura a requisição POST .
+        request.open("POST", "add-carrinho", true);                                         // Configura a requisição POST .
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // Define o cabeçalho da requisição.
         request.onreadystatechange = function () {                                      // função para manipular a resposta.
             if (request.readyState === 4 && request.status === 200) {

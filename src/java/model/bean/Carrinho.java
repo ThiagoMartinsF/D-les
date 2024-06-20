@@ -5,12 +5,13 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 public class Carrinho {
+
     private static List<Produto> itens = new ArrayList<>();
 
     public static void adicionarItem(Produto produto) {
         itens.add(produto);
     }
-    
+
     public static Carrinho getOrCreateCarrinho(HttpServletRequest request) {
         Carrinho carrinho = (Carrinho) request.getAttribute("carrinho");
         if (carrinho == null) {

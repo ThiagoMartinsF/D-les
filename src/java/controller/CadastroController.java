@@ -66,7 +66,8 @@ public class CadastroController extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getServletPath();
 
-if (url.equals("/cadastro")) {
+        if (url.equals("/cadastro")) {
+            System.out.println("ola");
             String nextPage = "/WEB-INF/jsp/login.jsp";
             Usuario user = new Usuario();
             UsuarioDAO userDAO = new UsuarioDAO();
@@ -77,7 +78,6 @@ if (url.equals("/cadastro")) {
             user.setDataNascimento(request.getParameter("data"));
             user.setCpf(request.getParameter("cpf"));
             user.setTelefone(request.getParameter("telefone"));
-            
 
             try {
 

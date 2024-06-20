@@ -20,10 +20,7 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controller.LoginController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>CategoriasController</servlet-name>
-        <servlet-class>controller.CategoriasController</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>ProdutoController</servlet-name>
         <servlet-class>controller.ProdutoController</servlet-class>
@@ -48,10 +45,7 @@
         <servlet-name>CadastroUsuarioController</servlet-name>
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>Carrinho2Controller</servlet-name>
-        <servlet-class>controller.Carrinho2Controller</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>EnderecoController</servlet-name>
         <servlet-class>controller.EnderecoController</servlet-class>
@@ -66,10 +60,6 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroController</servlet-name>
-        <url-pattern>/Cadastrar</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CadastroController</servlet-name>
         <url-pattern>/cadastro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -80,24 +70,21 @@
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/senha</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CategoriasController</servlet-name>
-        <url-pattern>/Categorias</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Produto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EntradaController</servlet-name>
+        <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Entrada</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SobremesaController</servlet-name>
+        <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Sobremesa</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>BebidaController</servlet-name>
+        <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Bebida</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -109,10 +96,6 @@
         <url-pattern>/CadastroU</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Carrinho2Controller</servlet-name>
-        <url-pattern>/Carrinho2</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>EnderecoController</servlet-name>
         <url-pattern>/Endereco</url-pattern>
     </servlet-mapping>
@@ -120,6 +103,7 @@
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
     </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

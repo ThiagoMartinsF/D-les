@@ -70,14 +70,15 @@ public class Carrinho1Controller extends HttpServlet {
             throws ServletException, IOException {
  
     Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
- 
+    String url=request.getServletPath();
+        System.out.println(url);
 
     // Adiciona o item
     int idProduto = Integer.parseInt(request.getParameter("id"));
     ProdutoDAO pDao = new ProdutoDAO();
     Produto item = pDao.buscarProduto(idProduto);
     if (item.getIdProduto() > 0) {
-        carrinho.adicionarItem(item);
+        Carrinho.adicionarItem(item);
     }
 
     // Retorna a lista de itens 
@@ -90,7 +91,7 @@ public class Carrinho1Controller extends HttpServlet {
 
     private String toJson(Carrinho carrinho) {
         Gson gson = new Gson();
-        return gson.toJson(carrinho.getItens());
+        return gson.toJson(Carrinho.getItens());
     }
 
     /**

@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class Conexao {
         private static final  String URL = "jdbc:mysql://localhost:3306/bonappetit?useSSL=false";
         private static final  String USUARIO = "root";
-        private static final  String SENHA = "root";
+        private static final  String SENHA = "";
         private static final  String driver = "com.mysql.cj.jdbc.Driver";
        
 public static java.sql.Connection conectar() {

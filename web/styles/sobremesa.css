@@ -1,45 +1,84 @@
-body{
+body {
+    background-color: gray; 
     margin: 0;
     padding: 0;
-    
-    background-color: gray;
 }
 
 header {
     background-color: rgb(70, 70, 70);
-    height: 9em;
+    padding: 1em;
     border-radius: 5px;
-}
-.titulo{
-    color: brown;
+    position: relative;
 }
 
-.titulo1{
-    color: rgb(0, 3, 170);
+#titulo {
+    color: brown;
+    margin: 0;
+    padding-bottom: 10px;
 }
-.titulo2{
-    color: rgb(240, 248, 255);
+
+.categorias {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    position: relative;
 }
-.titulo3{
-    color: rgb(184, 7, 1);
+#entrada{
+    color: blue;
 }
 
 #bebida{
-    color: aliceblue;
+    color: aliceblue;;
 }
+
 #sobremesa{
-    color: brown;
+    color: red;
 }
-.logo{
-    display: flex;
-    flex-wrap: wrap ;
+
+
+.categorias div {
     text-align: center;
+}
+
+.categorias i {
+    font-size: 2em;
+}
+
+.categorias p {
+    margin: 0.5em 0 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
     position: absolute;
-    top: 2%;
+    top: 10%;
+
 }
+
+.logo h1 {
+    margin: 0;
+}
+
+.titulo1 {
+    color: rgb(0, 3, 170);
+}
+
+.titulo2 {
+    color: rgb(240, 248, 255);
+}
+
+.titulo3 {
+    color: rgb(184, 7, 1);
+}
+
 #btnAbrir{
-    margin-top:40px;
+    left: 5%;
 }
+
 #carrinho {
     display: none;
     grid-template-columns: auto 400px;
@@ -99,81 +138,106 @@ header {
     background-color: rgb(88, 223, 76);
     color: #fff;
 }
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-    width: 28em;
-    height: 16em;
+
+main {
+    padding: 2em 1em;
 }
+
 .containerProdutos {
     display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-    border-color: rgb(209, 35, 35);
-    flex-direction: row;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
 }
 
-.direitosP{
-    color: rgb(223, 36, 36);
+.card-custom {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-h1 {
-    font-size: 2.0em;
-    text-align: center; 
+.card-custom:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.categoria-text {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.botoesFinais {
+    text-align: center;
+    background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
+    padding: 1em;
+    margin-top: 2em;
+}
+
+.botoesFinais a .btn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.botoesFinais a .btn:hover {
+    background-color: white;
+    color: #6d6d6d;
+    transition: 0.3s;
+}
+
 footer {
     background-color: rgb(70, 70, 70);
     text-align: center;
-    width: 100%;
-    height: 8em;
+    padding: 2em 1em;
     border-radius: 5px;
+    margin-top: 2em;
+}
+
+.direitosP {
+    color: rgb(223, 36, 36);
     margin: 0;
-    top: 0;
 }
 
-.botoesFinais{
-    text-align: center;
+@media (max-width: 768px) {
+    .categorias {
+        flex-direction: column;
+        gap: 0.5em;
+    }
 
-}
-.botoesFinai1{
-    position: relative;
-    margin-top: 10%;
-}
-button{
-    border-radius: 20px;
-}
+    .logo {
+        flex-direction: column;
+    }
 
-.categorias{
-    top: 5%;
-    justify-content: space-around;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-}
+    .containerProdutos {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.azul{
-    color: blue;
-}
-.branco{
-    color: rgb(255, 255, 255);
-}
-.vermelho{
-    color: rgb(238, 5, 5);
+    .card-custom {
+        width: 90%;
+    }
+
+    .botoesFinais {
+        flex-direction: column;
+        gap: 1em;
+    }
 }
 
-.botoesFinai2{
-    position: relative;
-    margin-top: 10%;
-    left: 80%;
-}

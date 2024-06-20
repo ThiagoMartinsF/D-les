@@ -64,6 +64,7 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {
         String url = request.getServletPath();
+        
         if (url.equals("/senha")) {
             String nextPage = "/WEB-INF/jsp/index.jsp";
             Usuario user = new Usuario();
