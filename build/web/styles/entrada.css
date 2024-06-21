@@ -75,6 +75,18 @@ header {
     color: rgb(184, 7, 1);
 }
 
+
+.vermelho{
+    color: red;
+    text-decoration: 0;
+}
+
+.branco{
+    color: white;
+    text-decoration: 0;
+}
+
+
 #btnAbrir{
     left: 5%;
 }

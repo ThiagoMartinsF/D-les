@@ -78,6 +78,17 @@ header {
     left: 5%;
 }
 
+#azul{
+    color: blue;
+    text-decoration: none;
+}
+
+#vermelho{
+    color: red;
+    text-decoration: none;
+}
+
+
 #carrinho {
     display: none;
     grid-template-columns: auto 400px;

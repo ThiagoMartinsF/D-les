@@ -40,6 +40,18 @@
         <servlet-name>CheckoutController</servlet-name>
         <servlet-class>controller.CheckoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EntradaController</servlet-name>
+        <servlet-class>controller.EntradaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BebidaController</servlet-name>
+        <servlet-class>controller.BebidaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SobremesaController</servlet-name>
+        <servlet-class>controller.SobremesaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -87,6 +99,20 @@
     <servlet-mapping>
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/add-carrinho</url-pattern>
+    </servlet-mapping>
+    <!-- Configuração para servir o carrinho -->
+    <servlet>
+        <servlet-name>CarrinhoController</servlet-name>
+        <servlet-class>controller.CarrinhoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/carrinho</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

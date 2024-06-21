@@ -15,6 +15,7 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,9 @@ import model.dao.UsuarioDAO;
  *
  * @author Senai
  */
+@WebServlet(name = "CarrinhoController", urlPatterns = {"/add-carrinho"})
+
+
 @MultipartConfig
 public class ProdutoController extends HttpServlet {
 
@@ -45,14 +49,14 @@ public class ProdutoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        
+
         ProdutoDAO produtosDAO = new ProdutoDAO();
         CategoriaDAO categoriasDAO = new CategoriaDAO();
         List<Categoria> categorias = categoriasDAO.listarCategorias();
         request.setAttribute("categorias", categorias);
-        
+
         System.out.println(url);
-        
+
         //cadastrar produtos
         if (url.equals("./CadProdutos")) {
             String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
@@ -103,10 +107,8 @@ public class ProdutoController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
-        
-        
+
         //bebida-ExController
-        
         if (url.equals("/Bebida")) {
             List<Produto> produtos = produtosDAO.read(2);
             request.setAttribute("produtos", produtos);
@@ -128,9 +130,7 @@ public class ProdutoController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
-        
-        
-        
+
         //sobremesa-ExController
         if (url.equals("/Sobremesa")) {
             List<Produto> produtos = produtosDAO.read(3);
@@ -192,6 +192,7 @@ public class ProdutoController extends HttpServlet {
         Part filePart = request.getPart("img");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
         if (fileName != null && !fileName.isEmpty()) {
+
             String basePath = getServletContext().getRealPath("/") + "assets";
             File uploads = new File(basePath);
             if (!uploads.exists()) {
@@ -204,6 +205,7 @@ public class ProdutoController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             newProduto.setImg("assets/" + fileName);
         } else {
             newProduto.setImg(null);
@@ -213,10 +215,7 @@ public class ProdutoController extends HttpServlet {
         produtosD.create(newProduto);
         response.sendRedirect("./Home");
 
-
-        
         //bebida-Post
-        
         if (fileName != null && !fileName.isEmpty()) {
 
             String basePath = getServletContext().getRealPath("/") + "assets";
@@ -237,13 +236,9 @@ public class ProdutoController extends HttpServlet {
             newProduto.setImg(null);
         }
 
-      //  produtosD.create(newProduto);
-       // response.sendRedirect("./Bebida");
-        
-        
-        
+        //  produtosD.create(newProduto);
+        // response.sendRedirect("./Bebida");
         //entrada-Post
-        
         if (fileName != null && !fileName.isEmpty()) {
 
             String basePath = getServletContext().getRealPath("/") + "assets";
@@ -263,11 +258,10 @@ public class ProdutoController extends HttpServlet {
         } else {
             newProduto.setImg(null);
         }
-      //  response.sendRedirect("./Home");
-      
+        //  response.sendRedirect("./Home");
+
         //sobremesa-Post
-        
-         if (fileName != null && !fileName.isEmpty()) {
+        if (fileName != null && !fileName.isEmpty()) {
 
             String basePath = getServletContext().getRealPath("/") + "assets";
             File uploads = new File(basePath);

@@ -26,15 +26,15 @@
             <div class="categorias">
                 <div>
                     <a href="./Entrada">
-                        <i class="fa-solid fa-burger"></i> 
-                        <p class="azul">Entradas</p>
+                        <i class="fa-solid fa-burger" id="entrada"></i> 
+                        <p id="azul">Entradas</p>
                     </a>
                 </div>
 
                 <div>
                     <a href="./Sobremesa">
                         <i class="fa-solid fa-stroopwafel" id = "sobremesa"></i> 
-                        <p class="vermelho">sobremesa</p>
+                        <p id="vermelho">sobremesa</p>
                     </a>
                 </div>
             </div>
@@ -58,36 +58,35 @@
     <br>
     <main>
         <div class="containerProdutos">
-            <div class="row">
-                <c:forEach var="produto" items="${produtos}">
-                    <c:if test="${produto.id_categoria == 2}">
-                        <div class="col-md-4 mb-3">
-                            <div class="card card-custom">
-                                <div class="card-body">
-                                    <div class="imagemProduto">
-                                         <img src="${produto.img}" alt="${produto.nome}">
-                                     </div> 
-                                    <h5 class="card-title">${produto.nome}</h5>
-                                    <p class="card-text categoria-text">Categoria: ${produto.id_categoria}</p>
-                                    <p class="card-text">Valor: R$ ${produto.preco}</p>
+                <div class="produtosLista"></div>
+                <div class="containerProdutos">
+                    <div class="row">
+                        <c:forEach var="produto" items="${produtos}">
+                            <div class="col-md-4 mb-3">
+                                <div class="card card-custom">
+                                    <div class="card-body">
+                                        <div class="imagemProduto">
+                                            <img src="${produto.img}" alt="${produto.nome}">
+                                        </div>
+                                        <h5 class="card-title">${produto.nome}</h5>
+                                        <p class="card-text categoria-text">Categoria: ${produto.id_categoria}</p>
+                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
+                                        <button class="btnComprar" data-idproduto="1">Adicionar ao Carrinho</button>        
+                                    </div>
                                 </div>
-                                <button class="btn btn-comprar" data-idproduto="${produto.idProduto}">COMPRAR</button>
                             </div>
-                        </div>
-                    </c:if>
-                </c:forEach>
+                        </c:forEach>
+                    </div>
+                </div>
             </div>
-        </div>
         <div class="botoesFinais">
-            <button>Confirmar</button>
+            <button>voltar</button>
         </div>
         <div class="botoesFinais1">
             <a href="./Login"><button>LogOut</button></a>
         </div>
 
-        <div lass="botoesFinais2">
-            <a href="./Home"><button>Voltar</button></a>
-        </div>
+   
 
     </main>
 

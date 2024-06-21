@@ -1,77 +1,70 @@
-const abrirCarrinho = document.getElementById("btnAbrir");
-const fecharCarrinho = document.getElementById("btnFechar");
-const background = document.getElementById("background");
-const carrinho = document.getElementById("carrinho");
+document.addEventListener("DOMContentLoaded", function () {
+    const abrirCarrinho = document.getElementById("btnAbrir");
+    const fecharCarrinho = document.getElementById("btnFechar");
+    const background = document.getElementById("background-carrinho");
+    const carrinho = document.getElementById("carrinho");
 
-abrirCarrinho.addEventListener("click", function () {
-    carrinho.classList.add("aberto");
-});
+    abrirCarrinho.addEventListener("click", function () {
+        carrinho.classList.add("aberto");
+    });
 
-function fechar() {
-    carrinho.classList.remove("aberto");
-}
+    fecharCarrinho.addEventListener("click", function () {
+        carrinho.classList.remove("aberto");
+    });
 
-background.addEventListener("click", fechar);
+    background.addEventListener("click", function () {
+        carrinho.classList.remove("aberto");
+    });
 
-// Função para carregar carrinho.
-function carregarCarrinho(){ 
-    const request = new XMLHttpRequest();
-    request.open("GET", "carrinho", true);
+    // Função para carregar carrinho.
+    function carregarCarrinho() {
+        const request = new XMLHttpRequest();
+        request.open("GET", "carrinho", true);
 
-    request.onreadystatechange = function () {
-        // Verifica a requisição e status.
-     
-        if (request.readyState === 4 && request.status === 200) {
-                                                                // Converte para json.
-            const data = JSON.parse(request.responseText);
-            console.log(data);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                const data = JSON.parse(request.responseText);
+                console.log(data);
 
-                                                                          // Seleciona o contêiner onde os produtos do carrinho serão exibidos.
-            const carrinhoMain = document.getElementById("carrinhoMain");
+                const carrinhoMain = document.getElementById("carrinhoMain");
+                carrinhoMain.innerHTML = "";
 
-                                              // Limpa o conteúdo atual do contêiner..
-            carrinhoMain.innerHTML = "";
+                data.forEach(produto => {
+                    const divP = document.createElement("div");
+                    divP.classList.add("produto");
 
-                                           // Itera sobre os dados retornados pelo servidor (cada 'produto' é um objeto).
-            data.forEach(produto => {
-                                                            // Cria uma div para representar um produto.
-                const divP = document.createElement("div");
-                divP.classList.add("produto");
+                    const divImg = document.createElement("div");
+                    divImg.classList.add("containerImg");
+                    divImg.innerHTML = '<img src="' + produto.imagem + '" >';
 
-                                                                            // Cria uma div para conter a imagem do produto.
-                const divImg = document.createElement("div");
-                divImg.classList.add("containerImg");                       // Adiciona a classe containerImg da div
-                divImg.innerHTML = '<img src="' + produto.imagem + '" >'; // Define o conteúdo (imagem) da div
-                
-                                                                             // Cria uma nova div para conter as informações do produto
-                const divInfo = document.createElement("div");
-                divInfo.classList.add("containerInfo");                     // Adiciona a classe containerInfo a div
-                divInfo.innerHTML = '<h3>' + produto.nome + '</h3><h4 class="preco">R$ ' + produto.valor.toFixed(2) + '</h4>'; // Define o conteúdo (nome e preço) da div
+                    const divInfo = document.createElement("div");
+                    divInfo.classList.add("containerInfo");
+                    divInfo.innerHTML = '<h3>' + produto.nome + '</h3><h4 class="preco">R$ ' + produto.valor.toFixed(2) + '</h4>';
 
-                // Adiciona as divs 
-                divP.appendChild(divImg);
-                divP.appendChild(divInfo);
-                carrinhoMain.appendChild(divP);
-            });
+                    divP.appendChild(divImg);
+                    divP.appendChild(divInfo);
+                    carrinhoMain.appendChild(divP);
+                });
+            }
         }
-    }
 
-        request.send();
+     
     }
 
     carregarCarrinho();
 
-// Função para adicionar um item no carrinho.
+    // Função para adicionar um item no carrinho.
     function adicionarItemAoCarrinho(idProduto) {
+        
+        
         const request = new XMLHttpRequest();
-        request.open("POST", "add-carrinho", true);                                         // Configura a requisição POST .
-        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // Define o cabeçalho da requisição.
-        request.onreadystatechange = function () {                                      // função para manipular a resposta.
+        request.open("POST", "add-carrinho", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.onreadystatechange = function () {
             if (request.readyState === 4 && request.status === 200) {
                 carregarCarrinho();
             }
         };
-        // passa o ID do produto como parâmetro.
         request.send("id=" + idProduto);
     }
 
@@ -79,9 +72,8 @@ function carregarCarrinho(){
     const btns = document.getElementsByClassName("btnComprar");
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
-                                                                     // Obtém o ID do produto a partir do atributo data-idproduto
             const idProduto = this.getAttribute("data-idproduto");
-                                                                     //chama a funcao adicionarCarrinho.
             adicionarItemAoCarrinho(idProduto);
         });
     }
+});
