@@ -20,22 +20,9 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controller.LoginController</servlet-class>
     </servlet>
-
     <servlet>
         <servlet-name>ProdutoController</servlet-name>
         <servlet-class>controller.ProdutoController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EntradaController</servlet-name>
-        <servlet-class>controller.EntradaController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SobremesaController</servlet-name>
-        <servlet-class>controller.SobremesaController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>BebidaController</servlet-name>
-        <servlet-class>controller.BebidaController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CadastroProduto</servlet-name>
@@ -45,7 +32,6 @@
         <servlet-name>CadastroUsuarioController</servlet-name>
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
     </servlet>
-
     <servlet>
         <servlet-name>EnderecoController</servlet-name>
         <servlet-class>controller.EnderecoController</servlet-class>
@@ -70,7 +56,6 @@
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/senha</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Produto</url-pattern>
@@ -103,7 +88,6 @@
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
     </servlet-mapping>
-
     <session-config>
         <session-timeout>
             30

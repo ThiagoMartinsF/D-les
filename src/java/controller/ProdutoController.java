@@ -213,40 +213,9 @@ public class ProdutoController extends HttpServlet {
         produtosD.create(newProduto);
         response.sendRedirect("./Home");
 
-        //cadastrarProdutos-ExController
-        if (url.equals("/CadProduto")) {
-            String nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
-            Produto produto = new Produto();
-            ProdutoDAO produtoDAO = new ProdutoDAO();
 
-            produto.setNome(request.getParameter("nome"));
-            produto.setPreco(Float.parseFloat(request.getParameter("preco")));
-            produto.setDescricao(request.getParameter("descricao"));
-            produto.setQtd(Integer.parseInt(request.getParameter("qtd")));
-            produto.setId_categoria(Integer.parseInt(request.getParameter("categoria")));
-
-            try {
-
-                if (produto.getNome().trim().isEmpty() || produto.getDescricao().trim().isEmpty()) {
-                    nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
-                    request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessarios.");
-                } else {
-                    produtoDAO.create(produto);
-                }
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
-
-            } catch (Exception e) {
-                nextPage = "/WEB-INF/jsp/cadastroProduto.jsp";
-                request.setAttribute("errorMessage", "Campo inválido");
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
-            }
-        } else {
-            processRequest(request, response);
-        }
         
-        //bebida-Excontroller
+        //bebida-Post
         
         if (fileName != null && !fileName.isEmpty()) {
 
@@ -268,8 +237,55 @@ public class ProdutoController extends HttpServlet {
             newProduto.setImg(null);
         }
 
-        produtosD.create(newProduto);
-        response.sendRedirect("./Bebida");
+      //  produtosD.create(newProduto);
+       // response.sendRedirect("./Bebida");
+        
+        
+        
+        //entrada-Post
+        
+        if (fileName != null && !fileName.isEmpty()) {
+
+            String basePath = getServletContext().getRealPath("/") + "assets";
+            File uploads = new File(basePath);
+            if (!uploads.exists()) {
+                uploads.mkdirs();
+            }
+            File file = new File(uploads, fileName);
+
+            try (InputStream input = filePart.getInputStream()) {
+                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            newProduto.setImg("assets/" + fileName);
+        } else {
+            newProduto.setImg(null);
+        }
+      //  response.sendRedirect("./Home");
+      
+        //sobremesa-Post
+        
+         if (fileName != null && !fileName.isEmpty()) {
+
+            String basePath = getServletContext().getRealPath("/") + "assets";
+            File uploads = new File(basePath);
+            if (!uploads.exists()) {
+                uploads.mkdirs();
+            }
+            File file = new File(uploads, fileName);
+
+            try (InputStream input = filePart.getInputStream()) {
+                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            newProduto.setImg("assets/" + fileName);
+        } else {
+            newProduto.setImg(null);
+        }
 
     }
 

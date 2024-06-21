@@ -40,7 +40,7 @@
 
                 </form>
                 <div class="link">
-                    <p>Ainda não tem um login? cadastre-se clicando <a href="./Cadastrar">aqui</a></p>
+                    <p>Ainda não tem um login? cadastre-se clicando <a href="./cadastro">aqui</a></p>
                 </form>
 
             </main>
