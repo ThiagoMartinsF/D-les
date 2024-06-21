@@ -51,6 +51,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <br>
                                 <div class="btn btn-primary mb-3">
                                     <span class="ps-3">Pay $</span>
                                     <span class="fas fa-arrow-right"></span>
@@ -58,8 +59,8 @@
                             </div>
                         </div>
                     </div>
+                    <a href="./Home"><button>Voltar</button></a>
                 </div>
-            </main>
             <footer></footer>
         </body>
 

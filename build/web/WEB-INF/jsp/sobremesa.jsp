@@ -7,6 +7,8 @@
     <head>
         <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
               crossorigin="anonymous">
@@ -93,7 +95,7 @@
         <br>
         <br>
         <div class="botoesFinais">
-            <button>voltar</button>
+            <a href="./Home"><button>Voltar</button></a>
         </div>
         <div class="botoesFinais1">
             <a href="./Login"><button>LogOut</button></a>

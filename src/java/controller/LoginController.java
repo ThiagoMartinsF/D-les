@@ -20,6 +20,10 @@ import model.dao.UsuarioDAO;
  */
 public class LoginController extends HttpServlet {
 
+    Usuario usuario = new Usuario();
+
+    private int idUsuario;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -64,7 +68,7 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {
         String url = request.getServletPath();
-        
+            
         if (url.equals("/senha")) {
             String nextPage = "/WEB-INF/jsp/index.jsp";
             Usuario user = new Usuario();
@@ -72,25 +76,10 @@ public class LoginController extends HttpServlet {
 
             user.setEmail(request.getParameter("email"));
             user.setSenha(request.getParameter("senha"));
+            valida.valida(user);
 
-            try {
-                Usuario userAutenticado = valida.valida(user);
 
-                if (userAutenticado != null && !userAutenticado.getEmail().trim().isEmpty()) {
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                    dispatcher.forward(request, response);
-                } else {
-                    nextPage = "/WEB-INF/jsp/login.jsp";
-                    request.setAttribute("errorMessage", "Usuário ou senha inválidos");
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                    dispatcher.forward(request, response);
-                }
-            } catch (Exception e) {
-                nextPage = "/WEB-INF/jsp/login.jsp";
-                request.setAttribute("errorMessage", "Usuário ou senha inválidos");
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
-            }
+            
         } else {
             processRequest(request, response);
         }

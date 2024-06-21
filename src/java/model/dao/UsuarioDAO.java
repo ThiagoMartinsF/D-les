@@ -129,9 +129,6 @@ public class UsuarioDAO {
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            usuarioValido.setIdUsuario(0);
-            usuarioValido.setEmail("");
-            usuarioValido.setSenha("");
         }
         return usuarioValido;
     }

@@ -33,10 +33,6 @@
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EnderecoController</servlet-name>
-        <servlet-class>controller.EnderecoController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CheckoutController</servlet-name>
         <servlet-class>controller.CheckoutController</servlet-class>
     </servlet>
@@ -51,6 +47,10 @@
     <servlet>
         <servlet-name>SobremesaController</servlet-name>
         <servlet-class>controller.SobremesaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EnderecoController1</servlet-name>
+        <servlet-class>controller.EnderecoController1</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
@@ -93,14 +93,9 @@
         <url-pattern>/CadastroU</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EnderecoController</servlet-name>
-        <url-pattern>/Endereco</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/add-carrinho</url-pattern>
@@ -113,6 +108,10 @@
     <servlet-mapping>
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/carrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnderecoController1</servlet-name>
+        <url-pattern>/Endereco</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
