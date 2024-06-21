@@ -112,7 +112,7 @@ public class ProdutoDAO {
 
     }
 
-    public void delete(Produto produto) {
+    /*public void delete(Produto produto) {
         try {
             java.sql.Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
@@ -127,7 +127,7 @@ public class ProdutoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public Boolean validaProduto(Float preco, int qtd) {
         Boolean validar = false;
@@ -156,7 +156,7 @@ public class ProdutoDAO {
         return null;
 
     }
-
+/*
     public void editar(Produto produto) {
         try {
             Connection conexao = Conexao.conectar();
@@ -180,7 +180,7 @@ public class ProdutoDAO {
 
         }
 
-    }
+    }*/
 
     public Produto buscarProduto(int idProduto) {
         Produto produto = new Produto();
