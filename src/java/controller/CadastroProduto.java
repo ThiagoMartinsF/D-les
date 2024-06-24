@@ -75,6 +75,7 @@ if (url.equals("/CadProduto")) {
             produto.setDescricao(request.getParameter("descricao"));
             produto.setQtd(Integer.parseInt(request.getParameter("qtd")));
             produto.setId_categoria(Integer.parseInt(request.getParameter("categoria")));
+            produto.setImg(request.getParameter("img"));
 
             try {
 

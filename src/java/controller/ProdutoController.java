@@ -189,97 +189,30 @@ public class ProdutoController extends HttpServlet {
         newProduto.setDescricao(request.getParameter("descricao"));
         newProduto.setQtd(Integer.parseInt(request.getParameter("qtd")));
         newProduto.setId_categoria(Integer.parseInt(request.getParameter("id_categoria")));
-        Part filePart = request.getPart("img");
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        if (fileName != null && !fileName.isEmpty()) {
+        
+       String basePath = getServletContext().getRealPath("/") + "assets";
+        File uploads = new File(basePath);
+        if (!uploads.exists()) {
+            uploads.mkdirs();
+        }
 
-            String basePath = getServletContext().getRealPath("/") + "assets";
-            File uploads = new File(basePath);
-            if (!uploads.exists()) {
-                uploads.mkdirs();
-            }
-            File file = new File(uploads, fileName);
-
-            try (InputStream input = filePart.getInputStream()) {
-                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        // Primeira imagem
+        Part filePart1 = request.getPart("img");
+        String fileName1 = Paths.get(filePart1.getSubmittedFileName()).getFileName().toString();
+        if (fileName1 != null && !fileName1.isEmpty()) {
+            File file1 = new File(uploads, fileName1);
+            try (InputStream input = filePart1.getInputStream()) {
+                Files.copy(input, file1.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            newProduto.setImg("assets/" + fileName);
+            newProduto.setImg("assets/" + fileName1);
         } else {
             newProduto.setImg(null);
         }
-
-        ProdutoDAO produtosD = new ProdutoDAO();
+       ProdutoDAO produtosD = new ProdutoDAO();
         produtosD.create(newProduto);
-        response.sendRedirect("./Home");
-
-        //bebida-Post
-        if (fileName != null && !fileName.isEmpty()) {
-
-            String basePath = getServletContext().getRealPath("/") + "assets";
-            File uploads = new File(basePath);
-            if (!uploads.exists()) {
-                uploads.mkdirs();
-            }
-            File file = new File(uploads, fileName);
-
-            try (InputStream input = filePart.getInputStream()) {
-                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            newProduto.setImg("assets/" + fileName);
-        } else {
-            newProduto.setImg(null);
-        }
-
-        //  produtosD.create(newProduto);
-        // response.sendRedirect("./Bebida");
-        //entrada-Post
-        if (fileName != null && !fileName.isEmpty()) {
-
-            String basePath = getServletContext().getRealPath("/") + "assets";
-            File uploads = new File(basePath);
-            if (!uploads.exists()) {
-                uploads.mkdirs();
-            }
-            File file = new File(uploads, fileName);
-
-            try (InputStream input = filePart.getInputStream()) {
-                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            newProduto.setImg("assets/" + fileName);
-        } else {
-            newProduto.setImg(null);
-        }
-        //  response.sendRedirect("./Home");
-
-        //sobremesa-Post
-        if (fileName != null && !fileName.isEmpty()) {
-
-            String basePath = getServletContext().getRealPath("/") + "assets";
-            File uploads = new File(basePath);
-            if (!uploads.exists()) {
-                uploads.mkdirs();
-            }
-            File file = new File(uploads, fileName);
-
-            try (InputStream input = filePart.getInputStream()) {
-                Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            newProduto.setImg("assets/" + fileName);
-        } else {
-            newProduto.setImg(null);
-        }
+        response.sendRedirect("./home");
 
     }
 
