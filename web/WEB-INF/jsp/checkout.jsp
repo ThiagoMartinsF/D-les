@@ -1,5 +1,5 @@
 <%-- Document : checkout Created on : 18/06/2024, 15:06:25 Author : Senai --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
         <!DOCTYPE html>
         <html>
