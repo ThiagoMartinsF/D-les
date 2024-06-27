@@ -45,13 +45,13 @@ public class EnderecoDAO {
     public void create(Endereco endereco) {
         try {
             Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = conexao.prepareStatement("INSERT INTO endereco (cep, rua, nomeDestinatario, numero, complemento, referencia, bairro, cidade, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = conexao.prepareStatement("INSERT INTO endereco (cep, rua, nomeDestinatario, numero, bairro, id_usuario) VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, endereco.getCep());
             stmt.setString(2, endereco.getRua());
             stmt.setString(3, endereco.getNomeDestinatario());
             stmt.setInt(4, endereco.getNumero());
-            stmt.setString(7, endereco.getBairro());
-            stmt.setInt(7, endereco.getId_usuario());
+            stmt.setString(5, endereco.getBairro());
+            stmt.setInt(6, endereco.getId_usuario());
             stmt.executeUpdate();
             stmt.close();
             conexao.close();
@@ -63,14 +63,14 @@ public class EnderecoDAO {
     public void update(Endereco endereco) {
         try {
             Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = conexao.prepareStatement("UPDATE endereco SET cep = ?, rua = ?, nomeDestinatario = ?, numero = ?, complemento = ?, referencia = ?, bairro = ?, cidade = ?, id_usuario = ? WHERE id_endereco = ?");
+            PreparedStatement stmt = conexao.prepareStatement("UPDATE endereco SET cep = ?, rua = ?, nomeDestinatario = ?, numero = ?, bairro = ?, id_usuario = ? WHERE id_endereco = ?");
             stmt.setString(1, endereco.getCep());
             stmt.setString(2, endereco.getRua());
             stmt.setString(3, endereco.getNomeDestinatario());
             stmt.setInt(4, endereco.getNumero());
-            stmt.setString(7, endereco.getBairro());
-            stmt.setInt(9, endereco.getId_usuario());
-            stmt.setInt(10, endereco.getIdEndereco());
+            stmt.setString(5, endereco.getBairro());
+            stmt.setInt(6, endereco.getId_usuario());
+            stmt.setInt(7, endereco.getIdEndereco());
 
             stmt.executeUpdate();
             stmt.close();
@@ -79,5 +79,4 @@ public class EnderecoDAO {
             e.printStackTrace();
         }
     }
-
 }

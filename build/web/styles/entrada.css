@@ -198,6 +198,8 @@ main {
     background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
     padding: 1em;
     margin-top: 2em;
+    background-color: #6d6d6d; 
+    transition: background-color 0.3s ease;
 }
 
 .botoesFinais a .btn {

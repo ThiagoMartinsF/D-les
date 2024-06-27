@@ -17,6 +17,13 @@ body {
 
     padding: 30px 10px;
 }
+.container {
+    text-align: center;
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .card px-4{
     display:flex;
     flex-direction:row;
@@ -84,6 +91,29 @@ p {
 }
 
 
+.botoesFinais {
+    text-align: center;
+    background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
+    padding: 1em;
+    margin-top: 2em;
+    background-color: #6d6d6d; 
+    transition: background-color 0.3s ease;
+}
+
+.botoesFinais a .btn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.botoesFinais a .btn:hover {
+    background-color: white;
+    color: #6d6d6d;
+    transition: 0.3s;
+}
 
 .btn.btn-primary:hover .fas.fa-arrow-right {
     transform: translate(15px);

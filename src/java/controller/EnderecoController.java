@@ -1,11 +1,13 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.bean.Endereco;
 import model.dao.EnderecoDAO;
 
@@ -14,7 +16,6 @@ public class EnderecoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/endereco.jsp";
-
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }
@@ -30,42 +31,58 @@ public class EnderecoController extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getServletPath();
 
-        if (url.equals("/Endereco")) {
-            String nextPage = "/WEB-INF/jsp/endereco.jsp";
-            Endereco endereco = new Endereco();
-            EnderecoDAO enderecoDAO = new EnderecoDAO();
-
-            endereco.setNomeDestinatario(request.getParameter("nomeDestinatario"));
-            endereco.setCep(request.getParameter("cep"));
-            endereco.setRua(request.getParameter("rua"));
-            endereco.setBairro(request.getParameter("bairro"));
-            try {
-                endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
-            } catch (NumberFormatException e) {
-                nextPage = "/WEB-INF/jsp/endereco.jsp";
-                request.setAttribute("errorMessage", "Número deve ser um valor inteiro.");
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-                dispatcher.forward(request, response);
+        if (url.equals("/checkout")) {
+            HttpSession session = request.getSession(false);
+            if (session == null || session.getAttribute("user") == null) {
+                response.setContentType("text/html;charset=UTF-8");
+                PrintWriter out = response.getWriter();
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Você precisa fazer o login antes de prosseguir!');");
+                out.println("window.location.href = '" + request.getContextPath() + "/Login';");
+                out.println("</script>");
                 return;
-            }
+            } else {
+                String nomeDestinatario = request.getParameter("nome");
+                String cep = request.getParameter("cep");
+                String rua = request.getParameter("rua");
+                String bairro = request.getParameter("bairro");
+                String numeroStr = request.getParameter("numero");
 
-            try {
-                if (endereco.getNomeDestinatario().trim().isEmpty() || endereco.getCep().trim().isEmpty() || endereco.getRua().trim().isEmpty() || endereco.getBairro().trim().isEmpty()) {
-                    nextPage = "/WEB-INF/jsp/endereco.jsp";
-                    request.setAttribute("errorMessage", "Erro! Por favor, preencha todos os campos necessários.");
-                } else {
-                    enderecoDAO.create(endereco);
-                    // Redireciona para o checkout se os campos estiverem válidos
-                    response.sendRedirect(request.getContextPath() + "/Checkout");
-                    return; // Encerra o método para evitar despacho adicional do request
+                Endereco endereco = new Endereco();
+                endereco.setNomeDestinatario(nomeDestinatario);
+                endereco.setCep(cep);
+                endereco.setRua(rua);
+                endereco.setBairro(bairro);
+
+                try {
+                    int numero = Integer.parseInt(numeroStr);
+                    endereco.setNumero(numero);
+                } catch (NumberFormatException e) {
+                    request.setAttribute("errorMessage", "Número deve ser um valor inteiro.");
+                    processRequest(request, response);
+                    return;
                 }
-            } catch (Exception e) {
-                nextPage = "/WEB-INF/jsp/endereco.jsp";
-                request.setAttribute("errorMessage", "Erro ao salvar o endereço.");
-            }
 
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
+                if (nomeDestinatario.trim().isEmpty() || cep.trim().isEmpty() || rua.trim().isEmpty() || bairro.trim().isEmpty()) {
+                    request.setAttribute("errorMessage", "Por favor, preencha todos os campos.");
+                    processRequest(request, response);
+                    return;
+                }
+
+                EnderecoDAO enderecoDAO = new EnderecoDAO();
+                if (enderecoDAO != null) {
+                    try {
+                        enderecoDAO.create(endereco);
+                        response.sendRedirect(request.getContextPath() + "/Checkout");
+                    } catch (Exception e) {
+                        request.setAttribute("errorMessage", "Erro ao salvar o endereço.");
+                        processRequest(request, response);
+                    }
+                } else {
+                    request.setAttribute("errorMessage", "Erro ao acessar o banco de dados.");
+                    processRequest(request, response);
+                }
+            }
         } else {
             processRequest(request, response);
         }

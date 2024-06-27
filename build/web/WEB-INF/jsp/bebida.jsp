@@ -81,12 +81,13 @@
                     </div>
                 </div>
             </div>
-        <div class="botoesFinais">
-            <a href="./Home"><button>Voltar</button></a>
-        </div>
-        <div class="botoesFinais1">
-            <a href="./Login"><button>LogOut</button></a>
-        </div>
+            
+            <div class="botoesFinais botoesFinais1">
+                <a href="./Endereco"><button class="btn">LogOut</button></a>
+            </div>
+            <div class="botoesFinais botoesFinais2">
+                <a href="./Home"><button class="btn">Voltar</button></a>
+            </div>
 
    
 

@@ -6,6 +6,7 @@ function numeros(evt) {
     return true;
 }
 
+
 const validarCampo = (campo, minLength) => {
     campo.addEventListener('input', () => {
         const value = campo.value;
@@ -18,7 +19,7 @@ const validarCampo = (campo, minLength) => {
     });
 }
 
-validarCampo(inputCpf, 14);
-validarCampo(inputTelefone, 14);
+validarCampo(inputCep, 8);
+validarCampo(inputNumero, 5);
 
 

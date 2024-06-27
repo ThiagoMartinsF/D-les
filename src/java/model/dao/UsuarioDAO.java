@@ -106,32 +106,32 @@ public class UsuarioDAO {
         }
     }
     
-     public Usuario valida(Usuario user) {
-        Usuario usuarioValido = new Usuario();
-        try {
-            Connection con = Conexao.conectar();
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
-            
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE email = ? AND senha = ?");
-            stmt.setString(1, user.getEmail());
-            stmt.setString(2, user.getSenha());
-            rs = stmt.executeQuery();
-            
-            if(rs.next()) {
-                usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
-                usuarioValido.setEmail(rs.getString("email"));
-                usuarioValido.setSenha(rs.getString("senha"));
-            }
-            
-            rs.close();
-            stmt.close();
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return usuarioValido;
-    }
+        public Usuario valida(Usuario user) {
+           Usuario usuarioValido = new Usuario();
+           try {
+               Connection con = Conexao.conectar();
+               PreparedStatement stmt = null;
+               ResultSet rs = null;
+
+               stmt = con.prepareStatement("SELECT * FROM usuario WHERE email = ? AND senha = ?");
+               stmt.setString(1, user.getEmail());
+               stmt.setString(2, user.getSenha());
+               rs = stmt.executeQuery();
+
+               if(rs.next()) {
+                   usuarioValido.setIdUsuario(rs.getInt("idUsuario"));
+                   usuarioValido.setEmail(rs.getString("email"));
+                   usuarioValido.setSenha(rs.getString("senha"));
+               }
+
+               rs.close();
+               stmt.close();
+               con.close();
+           } catch (SQLException e) {
+               e.printStackTrace();
+           }
+           return usuarioValido;
+       }
     
     public void editar(Usuario usuario){
         try {
