@@ -92,3 +92,4 @@ public class Usuario implements Serializable {
         this.stats = stats;
     }
 }
+    

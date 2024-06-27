@@ -45,7 +45,7 @@
                     </div>
                     <div id="carrinhoMain"></div>
                     <div class="carrinho-footer">
-                        <a href="./Checkout"><button class="btn btn-finalizar">FINALIZAR COMPRA</button></a>
+                          <a href="./Endereco"><button class="btn btn-finalizar">FINALIZAR COMPRA</button></a>
                     </div>
                 </div>
             </div>

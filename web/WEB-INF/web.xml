@@ -56,6 +56,10 @@
         <servlet-name>EnderecoController</servlet-name>
         <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
+      <servlet-mapping>
+        <servlet-name>ConfirmacaoController</servlet-name>
+        <url-pattern>/CheckoutController</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProdutoController</servlet-name>
         <url-pattern>/Home</url-pattern>
