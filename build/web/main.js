@@ -1,5 +1,4 @@
 
-/*autor Justino*/
 function numeros(evt) {
     var number = (evt.which) ? evt.which : event.keyCode;
     if (number > 31 && (number < 48 || number > 57))
@@ -21,5 +20,5 @@ const validarCampo = (campo, minLength) => {
 
 validarCampo(inputCpf, 14);
 validarCampo(inputTelefone, 14);
-//fim
+
 
