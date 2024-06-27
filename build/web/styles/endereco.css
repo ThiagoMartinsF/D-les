@@ -14,10 +14,15 @@ body {
 
 h1 {
     font-size: 24px;
+
 }
 
 h1 .blue {
     color: blue;
+}
+
+#white{
+    color: white;
 }
 
 h1 .red {
@@ -26,21 +31,27 @@ h1 .red {
 
 form {
     display: inline-block;
-    text-align: left;
+    text-align: center;
+    background-color: #727070;
+    width: 380px;
+    border-radius: 40px;
 }
 
 label {
     display: block;
     margin-top: 10px;
-    color: #333;
+    color: #000000;
 }
 
 input {
-    display: block;
-    width: 100%;
+    position: relative;
+    display: flex;
+    width: 70%;
     padding: 8px;
     margin: 5px 0 10px 0;
-    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: brown;
+    left: 12%;
 }
 
 button {
@@ -49,8 +60,32 @@ button {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    border-radius: 10px;
+
+}
+.botoesFinais {
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    transition: background-color 0.3s ease;
+}
+
+.botoesFinais a .btn {
+    color: rgb(155, 62, 62);
+    background-color: aliceblue;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.botoesFinais a .btn:hover {
+    background-color: rgb(174, 53, 53);
+    color: #dcd7d7;
+    transition: 0.3s;
 }
 
 button[type="button"] {
     margin-left: 10px;
 }
+

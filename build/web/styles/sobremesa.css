@@ -192,16 +192,15 @@ main {
 
 .botoesFinais {
     text-align: center;
-    background-image: linear-gradient(to right, #6d6d6d 0%, #da6955 51%, #797979 100%);
     padding: 1em;
     margin-top: 2em;
-    background-color: #6d6d6d; 
+
     transition: background-color 0.3s ease;
 }
 
 .botoesFinais a .btn {
-    color: white;
-    background-color: transparent;
+    color: rgb(155, 62, 62);
+    background-color: aliceblue;
     border: 1px solid white;
     padding: 0.5em 1em;
     text-transform: uppercase;
@@ -209,8 +208,8 @@ main {
 }
 
 .botoesFinais a .btn:hover {
-    background-color: white;
-    color: #6d6d6d;
+    background-color: rgb(174, 53, 53);
+    color: #dcd7d7;
     transition: 0.3s;
 }
 
