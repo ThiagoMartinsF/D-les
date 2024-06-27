@@ -5,7 +5,7 @@
     <head>
         <script src="https://kit.fontawesome.com/0e9b22a682.js" crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
               integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="./styles/entrada.css" rel="stylesheet" type="text/css"/>
@@ -41,11 +41,11 @@
                 <div id="background-carrinho"></div>
                 <div id="carrinho-container">
                     <div class="carrinho-header">
-                        <button id="btnFechar" onclick="fecharCarrinho()"><i class="fa-solid fa-xmark"></i></button>
+                        <button id="btnFechar"><i class="fa-solid fa-xmark"></i></button>
                     </div>
                     <div id="carrinhoMain"></div>
                     <div class="carrinho-footer">
-                          <a href="./Endereco"><button class="btn btn-finalizar">FINALIZAR COMPRA</button></a>
+                        <a href="./Endereco"><button class="btn btn-finalizar">FINALIZAR COMPRA</button></a>
                     </div>
                 </div>
             </div>
@@ -63,13 +63,13 @@
                             <div class="col-md-4 mb-3">
                                 <div class="card card-custom">
                                     <div class="card-body">
-                                        <div class="imagemProduto">
-                                            <img src="${produto.img}" alt="${produto.nome}">
-                                        </div>
+
                                         <h5 class="card-title">${produto.nome}</h5>
                                         <p class="card-text categoria-text">Categoria: ${produto.id_categoria}</p>
-                                        <p class="card-text">Valor: R$ ${produto.preco}</p>
-                                        <button class="btnComprar" data-idproduto="1">Adicionar ao Carrinho</button>        
+                                        <p class="card-text descricao-text">Descricao: ${produto.descricao}</p>
+
+                                        <p class="card-text">Preço: R$ ${produto.preco}</p>
+                                        <button class="btnComprar" data-idProduto="1">Adicionar ao Carrinho</button>        
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
             <div class="botoesFinais botoesFinais2">
                 <a href="./Home"><button class="btn">Voltar</button></a>
             </div>
-        
+
         </main>
         <footer>
             <div class="direitos">

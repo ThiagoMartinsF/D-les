@@ -112,7 +112,7 @@ public class ProdutoDAO {
 
     }
 
-    /*public void delete(Produto produto) {
+    public void delete(Produto produto) {
         try {
             java.sql.Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
@@ -127,7 +127,7 @@ public class ProdutoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     public Boolean validaProduto(Float preco, int qtd) {
         Boolean validar = false;
@@ -156,7 +156,7 @@ public class ProdutoDAO {
         return null;
 
     }
-/*
+
     public void editar(Produto produto) {
         try {
             Connection conexao = Conexao.conectar();
@@ -180,7 +180,7 @@ public class ProdutoDAO {
 
         }
 
-    }*/
+    }
 
     public Produto buscarProduto(int idProduto) {
         Produto produto = new Produto();
@@ -190,10 +190,10 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
-            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE  id_produto = ?");
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE  idProduto = ?");
             stmt.setInt(1, idProduto);
 
-            rs = stmt.executeQuery();
+                rs = stmt.executeQuery();
 
             if (rs.next()) {
                 produto.setIdProduto(rs.getInt("idProduto"));
@@ -221,7 +221,7 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             ResultSet rs = null;
-            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE nome LIKE ? OR descricao LIKE ?");
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE nome LIKE ? OR descricao LIKE ?");
             stmt.setString(1, "%" + busca + "%");
             stmt.setString(2, "%" + busca + "%");
 
@@ -254,7 +254,7 @@ public class ProdutoDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
 
-            stmt = conexao.prepareStatement("SELECT * FROM produtos WHERE categoria = ?");
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE categoria = ?");
             stmt.setInt(1, categoria);
 
             rs = stmt.executeQuery();

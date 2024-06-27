@@ -5,14 +5,17 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Carrinho;
+import static model.bean.Carrinho.getOrCreateCarrinho;
 import model.bean.Produto;
 import model.dao.ProdutoDAO;
 
@@ -46,13 +49,19 @@ public class CarrinhoController extends HttpServlet {
             int idProduto = Integer.parseInt(request.getParameter("id"));
             ProdutoDAO pDao = new ProdutoDAO();
             Produto item = pDao.buscarProduto(idProduto);
-            if (item.getIdProduto() > 0) {
+            if (item != null) {
                 Carrinho.adicionarItem(item);
             }
-            // Retorna a lista de itens 
+
+            List<Produto> adicionarItem = carrinho.getItens();
+            
+            Gson gson = new Gson();
+            String jsonItens = gson.toJson(adicionarItem);
+
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
+            out.print(jsonItens);
             out.flush();
         }
 

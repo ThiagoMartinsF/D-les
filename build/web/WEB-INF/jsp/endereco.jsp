@@ -40,9 +40,10 @@
                             <div>
                             </div>
                             <button type="submit">Confirmar</button>
-                            <a href="./Home"><button>Voltar</button></a>
+                            
 
                         </div>
+                        <a href="./Home"><button>Voltar</button></a>
                     </form>
 
                 </div>

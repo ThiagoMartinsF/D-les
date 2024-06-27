@@ -27,36 +27,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(data);
 
                 const carrinhoMain = document.getElementById("carrinhoMain");
-                carrinhoMain.innerHTML = "";
+                carrinhoMain.innerHTML = "Adicionar Carrinho";
 
                 data.forEach(produto => {
                     const divP = document.createElement("div");
-                    divP.classList.add("produto");
+                    divP.classList.add("card-title");
 
-                    const divImg = document.createElement("div");
-                    divImg.classList.add("containerImg");
-                    divImg.innerHTML = '<img src="' + produto.imagem + '" >';
+               //     const divImg = document.createElement("div");
+                //    divImg.classList.add("containerImg");
+                 //   divImg.innerHTML = '<img src="' + produto.imagem + '" >';
 
                     const divInfo = document.createElement("div");
-                    divInfo.classList.add("containerInfo");
+                    divInfo.classList.add("preco-text");
                     divInfo.innerHTML = '<h3>' + produto.nome + '</h3><h4 class="preco">R$ ' + produto.valor.toFixed(2) + '</h4>';
 
-                    divP.appendChild(divImg);
+          //          divP.appendChild(divImg);
                     divP.appendChild(divInfo);
                     carrinhoMain.appendChild(divP);
                 });
             }
-        }
+        };
 
-     
+        request.send();
     }
-
-    carregarCarrinho();
 
     // Função para adicionar um item no carrinho.
     function adicionarItemAoCarrinho(idProduto) {
-        
-        
         const request = new XMLHttpRequest();
         request.open("POST", "add-carrinho", true);
         request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -68,12 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
         request.send("id=" + idProduto);
     }
 
+    function adicionarProdutoAoCarrinho(idProduto) {
+        adicionarItemAoCarrinho(idProduto);
+    }
+
     // Adiciona eventos de clique de compra.
     const btns = document.getElementsByClassName("btnComprar");
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
-            const idProduto = this.getAttribute("data-idproduto");
-            adicionarItemAoCarrinho(idProduto);
+            const idProduto = this.getAttribute("data-idProduto");
+            adicionarProdutoAoCarrinho(idProduto);
         });
     }
 });
