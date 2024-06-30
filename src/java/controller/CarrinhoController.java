@@ -5,71 +5,120 @@
  */
 package controller;
 
-import com.google.gson.Gson;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import model.bean.Carrinho;
-import static model.bean.Carrinho.getOrCreateCarrinho;
-import model.bean.Produto;
-import model.dao.ProdutoDAO;
+import model.dao.CarrinhoDAO;
 
-@WebServlet(name = "CarrinhoController", urlPatterns = {"/add-carrinho"})
+
 public class CarrinhoController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    private CarrinhoDAO carrinhoDAO;
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String url = request.getServletPath();
-
+    public void init() throws ServletException {
+        DataSource dataSource = (DataSource) getServletContext().getAttribute("dataSource");
+        try {
+            Connection connection = dataSource.getConnection();
+            carrinhoDAO = new CarrinhoDAO(connection);
+        } catch (SQLException e) {
+            throw new ServletException("Erro ao obter conexão com o banco de dados", e);
+        }
     }
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+        String action = request.getParameter("action");
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-
-        String url = request.getServletPath();
-
-        if (url.equals("/add-carrinho")) {
-            Carrinho carrinho = Carrinho.getOrCreateCarrinho(request);
-
-            // Adiciona o item
-            int idProduto = Integer.parseInt(request.getParameter("id"));
-            ProdutoDAO pDao = new ProdutoDAO();
-            Produto item = pDao.buscarProduto(idProduto);
-            if (item != null) {
-                Carrinho.adicionarItem(item);
-            }
-
-            List<Produto> adicionarItem = carrinho.getItens();
-            
-            Gson gson = new Gson();
-            String jsonItens = gson.toJson(adicionarItem);
-
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            PrintWriter out = response.getWriter();
-            out.print(jsonItens);
-            out.flush();
+        if (action == null) {
+            action = "listar"; 
         }
 
+        switch (action) {
+            case "listar":
+                listarItensCarrinho(request, response);
+                break;
+            case "adicionar":
+                adicionarItemCarrinho(request, response);
+                break;
+            case "remover":
+                removerItemCarrinho(request, response);
+                break;
+            default:
+                listarItensCarrinho(request, response);
+        }
     }
 
-    @Override
-    public String getServletInfo() {
-        return "Short description";
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
     }
 
+    private void listarItensCarrinho(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+        int idUsuario = 1; 
+        List<Carrinho> carrinhoItens = carrinhoDAO.listarItensPorUsuario(idUsuario);
+       
+        request.setAttribute("carrinhoItens", carrinhoItens);
+        request.getRequestDispatcher("/carrinho.jsp").forward(request, response);
+    }
+
+    private void adicionarItemCarrinho(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Recupera os parâmetros do formulário
+        int idUsuario = Integer.parseInt(request.getParameter("id_usuario"));
+        int idProduto = Integer.parseInt(request.getParameter("id_produto"));
+
+        
+        Carrinho carrinho = new Carrinho();
+        carrinho.setId_usuario(idUsuario);
+        carrinho.setId_produto(idProduto);
+
+        // Chama o método do DAO para adicionar o item ao carrinho
+        boolean sucesso = carrinhoDAO.adicionarItem(carrinho);
+
+        if (sucesso) {
+           
+            response.sendRedirect(request.getContextPath() + "/CarrinhoController?action=listar");
+        } else {
+           
+            response.getWriter().println("Falha ao adicionar item ao carrinho.");
+        }
+    }
+
+    private void removerItemCarrinho(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+        int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
+
+      
+        boolean sucesso = carrinhoDAO.removerItem(idCarrinho);
+
+        if (sucesso) {
+            // Redireciona de volta para a página de listagem de itens no carrinho
+            response.sendRedirect(request.getContextPath() + "/CarrinhoController?action=listar");
+        } else {
+            // Em caso de falha, redireciona para uma página de erro ou trata de outra forma
+            response.getWriter().println("Falha ao remover item do carrinho.");
+        }
+    }
+
+    public void destroy() {
+        try {
+            if (carrinhoDAO != null) {
+                carrinhoDAO.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -6,34 +6,42 @@ import javax.servlet.http.HttpServletRequest;
 
 public class Carrinho {
 
-    private static List<Produto> itens = new ArrayList<>();
+    private int idCarrinho;
+    private int id_usuario;
+    private int id_produto;
 
-    public static void adicionarItem(Produto produto) {
-        itens.add(produto);
+    public Carrinho() {
     }
 
-    public static Carrinho getOrCreateCarrinho(HttpServletRequest request) {
-        Carrinho carrinho = (Carrinho) request.getAttribute("carrinho");
-        if (carrinho == null) {
-            carrinho = new Carrinho();
-            request.setAttribute("carrinho", carrinho);
-        }
-        return carrinho;
+    public Carrinho(int idCarrinho, int id_usuario, int id_produto) {
+        this.idCarrinho = idCarrinho;
+        this.id_usuario = id_usuario;
+        this.id_produto = id_produto;
     }
 
-    public static void removerItem(int index) {
-        itens.remove(index);
+    public int getIdCarrinho() {
+        return idCarrinho;
     }
 
-    public static List<Produto> getItens() {
-        return itens;
+    public void setIdCarrinho(int idCarrinho) {
+        this.idCarrinho = idCarrinho;
     }
 
-    public static float calcularTotal() {
-        float total = 0;
-        for (Produto produto : itens) {
-            total += produto.getPreco();
-        }
-        return total;
+    public int getId_usuario() {
+        return id_usuario;
     }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public int getId_produto() {
+        return id_produto;
+    }
+
+    public void setId_produto(int id_produto) {
+        this.id_produto = id_produto;
+    }
+    
+    
 }

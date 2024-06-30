@@ -33,6 +33,10 @@
         <servlet-class>controller.CadastroUsuarioController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CarrinhoController</servlet-name>
+        <servlet-class>controller.CarrinhoController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CheckoutController</servlet-name>
         <servlet-class>controller.CheckoutController</servlet-class>
     </servlet>
@@ -100,18 +104,14 @@
         <servlet-name>CadastroUsuarioController</servlet-name>
         <url-pattern>/CadastroU</url-pattern>
     </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/Carrinho</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/Checkout</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CarrinhoController</servlet-name>
-        <url-pattern>/add-carrinho</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>CarrinhoController</servlet-name>
-        <servlet-class>controller.CarrinhoController</servlet-class>
-    </servlet>
     <servlet>
         <servlet-name>ConfirmacaoController</servlet-name>
         <servlet-class>controller.ConfirmacaoController</servlet-class>
